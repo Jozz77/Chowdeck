@@ -18,7 +18,7 @@ onMounted(() => {
   // Animate heading (fade in with GSAP)
   tl.fromTo(headingRef.value, 
   { opacity: 0, y: 200 },    // Starting state (invisible, moved 50px down)
-  { opacity: 1, y: 0, duration: 2.5, ease: "power2.out" } // Slowly fades in and moves to original position
+  { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" } // Slowly fades in and moves to original position
 )
     // Animate button 1 (slide in from bottom)
     .from(buttonRef1.value, {
@@ -44,8 +44,10 @@ onMounted(() => {
 <template>
   <div class="px-[5%] mt-20">
     <!-- Heading to animate -->
-    <h1 ref="headingRef" class="text-center text-[8rem] font-bold">
-      Se o ti jeun?
+    <h1 ref="headingRef" class="text-center text-[7rem] font-bold">
+      <!-- Se o ti jeun? -->
+      <!-- You don chop? -->
+      You've eaten?
     </h1>
 
     <!-- Buttons to animate -->

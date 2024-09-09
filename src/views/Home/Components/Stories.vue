@@ -49,7 +49,7 @@ onMounted(() => {
         start: "top 80%", // When the top of the section is 80% from the top of the viewport
         end: "bottom top", // End when the bottom of the section hits the top of the viewport
         // toggleActions: "play none none reverse",
-        once: true
+        once: true,
       },
     }
   );
@@ -68,7 +68,7 @@ onMounted(() => {
         start: "top 80%", // When the top of the section is 80% from the top of the viewport
         end: "bottom top", // End when the bottom of the section hits the top of the viewport
         // toggleActions: "play none none reverse",
-        once: true
+        once: true,
       },
     }
   );
@@ -77,12 +77,10 @@ onMounted(() => {
 
 <template>
   <div class="px-[5%] py-8 overflow-hidden">
-    <section
-      class="join-section text-[#D1D5DB] mt-16 flex gap-2 items-center justify-center"
-    >
-      <h2 class="text-[#D1D5DB] text-[3.5rem]">Join our growing network</h2>
-      <div class="text-[#D1D5DB]">
-        <OhVueIcon name="pr-arrow-down" class="text-[2rem]" />
+    <section class="join-section text-[#D1D5DB] flex gap-3 items-center">
+      <h2 class="font-black text-[3.5rem]">Stories</h2>
+      <div class="">
+        <img src="../Assets/Pasta.svg" class="w-full" alt="" />
       </div>
     </section>
 
@@ -90,25 +88,24 @@ onMounted(() => {
       <div
         v-for="join in joinData"
         :key="join.id"
-        class="join-item w-[30%] border-2 rounded-[16px] border-black"
+        class="join-item w-[31%] border-2 rounded-[16px] overflow-hidden border-black"
       >
+        <section class="relative mt-[-0.2rem]">
+          <img src="../Assets/story2.png" class="w-full" alt="" />
+        </section>
         <section class="py-6 flex flex-col gap-3 px-[5%]">
-          <div>
-            <img src="../Assets/circle.svg" alt="" />
-          </div>
-          <h3 class="font-black text-[1.4rem]">Start selling</h3>
-          <p>
-            Are you a restaurant owner looking to grow your business? Reach new
-            customers when you join our network.
+          <h3 class="font-black text-center uppercase text-[0.8rem]">
+            Chowdeck Joins Y Combinator's S'22 Batch
+          </h3>
+          <p class="text-[1rem] text-center font-medium ">
+            Chowdeck has been accepted to Y Combinator’s Summer Batch 2022,
+            joining a league of extraordinary companies that are dis...
           </p>
           <button
-            class="hover:[blue] uppercase text-left text-[0.9rem] font-semibold"
+            class=" bg-[#0c513f16] rounded-[8px] mt-4 py-3 text-[#0C513F] text-[0.9rem] font-medium"
           >
-            see more
+            Read More
           </button>
-        </section>
-        <section>
-          <img src="../Assets/join1.svg" class="w-full" alt="" />
         </section>
       </div>
     </section>

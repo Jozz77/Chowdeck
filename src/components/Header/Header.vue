@@ -7,7 +7,7 @@ addIcons(MdKeyboardarrowdown);
 </script>
 
 <template lang="">
-  <header class="px-[5%] py-3 bg-white z-10 top-0 fixed w-full font-semibold text-[1rem] flex items-center justify-between">
+  <header class="px-[5%] py-3 bg-white z-50 top-0 fixed w-full font-semibold text-[1rem] flex items-center justify-between">
     <div>
       <img alt="Vue logo" class="w-full" src="./Assets/Logo.svg" />
     </div>

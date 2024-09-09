@@ -1,20 +1,9 @@
 <script setup>
-import { ref, defineComponent } from "vue";
+import { ref, onMounted, watch } from "vue";
+import { gsap } from "gsap";
 import Phone from "../Assets/phone.png";
 
 // Define tab content components
-const TabContent1 = defineComponent({
-  template: `<div><h2>Customer Tab Content</h2><p>This is the content for the Customer tab.</p></div>`,
-});
-
-const TabContent2 = defineComponent({
-  template: `<div><h2>Vendors Tab Content</h2><p>This is the content for the Vendors tab.</p></div>`,
-});
-
-const TabContent3 = defineComponent({
-  template: `<div><h2>Riders Tab Content</h2><p>This is the content for the Riders tab.</p></div>`,
-});
-
 const tabs = ref([
   { name: "Customer" },
   { name: "Vendors" },
@@ -28,11 +17,54 @@ const activeTab = ref(tabs.value[0]);
 function selectTab(tab) {
   activeTab.value = tab;
 }
+
+// GSAP animations
+function animateContent() {
+  const tl = gsap.timeline();
+  tl.from(".tab-buttons button", { opacity: 0, y: 50, stagger: 0.2, duration: 1, ease: "power4.out" })
+    .from(".customer-heading", { opacity: 0, y: 50, duration: 1, ease: "power4.out" }, "-=0.8")
+    .from(".customer-text", { opacity: 0, y: 30, duration: 1, ease: "power4.out" }, "-=0.5")
+    .from(".phone-img", { opacity: 0, x: 100, duration: 1, ease: "power4.out" }, "-=0.5")
+    .from(".rotate-animation", { opacity: 0, scale: 0, duration: 1, ease: "power4.out" }, "-=0.5");
+}
+
+// Use Intersection Observer to trigger animation when component is in view
+onMounted(() => {
+  const section = document.querySelector(".tab-section");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateContent(); // Trigger the GSAP animation
+        observer.unobserve(section); // Stop observing once animation has started
+      }
+    });
+  }, { threshold: 0.3 }); // Trigger when 30% of the section is in view
+
+  observer.observe(section);
+});
+
+// Watch for activeTab changes and trigger animations
+watch(activeTab, (newTab) => {
+  const tl = gsap.timeline();
+  if (newTab.name === "Customer") {
+    tl.from(".customer-heading", { opacity: 0, y: 50, duration: 1, ease: "power4.out" })
+      .from(".customer-text", { opacity: 0, y: 30, duration: 1, ease: "power4.out" }, "-=0.5")
+      .from(".phone-img", { opacity: 0, x: 100, duration: 1, ease: "power4.out" }, "-=0.5")
+      .from(".rotate-animation", { opacity: 0, scale: 0, duration: 1, ease: "power4.out" }, "-=0.5");
+  } else if (newTab.name === "Vendors") {
+    tl.from(".vendor-heading", { opacity: 0, y: 50, duration: 1, ease: "power4.out" })
+      .from(".vendor-text", { opacity: 0, y: 30, duration: 1, ease: "power4.out" }, "-=0.5");
+  } else if (newTab.name === "Riders") {
+    tl.from(".rider-heading", { opacity: 0, y: 50, duration: 1, ease: "power4.out" })
+      .from(".rider-text", { opacity: 0, y: 30, duration: 1, ease: "power4.out" }, "-=0.5");
+  }
+});
 </script>
 
 <template>
-  <div>
-    <section class="flex justify-center py-3">
+  <div class="mt-20 tab-section">
+    <section class="flex justify-center py-3 tab-buttons">
       <div class="bg-[#FFF3CC] text-base font-medium rounded-full">
         <button
           v-for="tab in tabs"
@@ -47,42 +79,40 @@ function selectTab(tab) {
     </section>
 
     <!-- Display Tab Content -->
-    <section class="mt-20 px-[5%]">
+    <section class="mt-12 px-[5%]">
       <transition name="fade">
         <div key="tab-content">
-          <div class="text-center" v-if="activeTab.name === 'Customer'">
-            <section>
-              <h2 class="text-[3.5rem] font-black">Try the App</h2>
-              <p class="px-[25%] tracking-wider text-[1.1rem]">
-                Have meals delivered to you within minutes from a wide variety
-                of restaurants ranging from African to Continental cuisines to
-                satisfy your cravings.
+          <div v-if="activeTab.name === 'Customer'" class="text-center">
+            <section class=" flex flex-col gap-4">
+              <h2 class="text-[3.5rem] font-black customer-heading">Try the App</h2>
+              <p class="px-[25%] tracking-wider text-[1.1rem] customer-text">
+                Have meals delivered to you within minutes from a wide variety of restaurants ranging from African to
+                Continental cuisines to satisfy your cravings.
               </p>
             </section>
 
             <section class="relative mx-auto w-[30%] mt-20 ">
-              <img :src="Phone" class="w-full" alt="phone" />
+              <img :src="Phone" class="w-full phone-img" alt="phone" />
 
               <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
-                <img src="../Assets/roll.svg" class="w-full " alt="roll">
+                <img src="../Assets/roll.svg" class="w-full " alt="roll" />
               </div>
             </section>
           </div>
 
-          <div v-if="activeTab.name === 'Vendors'">
+          <div v-if="activeTab.name === 'Vendors'" class="text-center">
             <section>
-              <h2 class="text-2xl font-bold">Vendors Content</h2>
-              <p>
-                This is the content for the Vendors tab. Add any custom styles
-                here.
+              <h2 class="text-2xl font-bold vendor-heading">Vendors Content</h2>
+              <p class="vendor-text">
+                This is the content for the Vendors tab. Add any custom styles here.
               </p>
             </section>
           </div>
-          <div v-if="activeTab.name === 'Riders'">
-            <h2 class="text-2xl font-bold">Riders Content</h2>
-            <p>
-              This is the content for the Riders tab. Style it to fit your
-              needs.
+
+          <div v-if="activeTab.name === 'Riders'" class="text-center">
+            <h2 class="text-2xl font-bold rider-heading">Riders Content</h2>
+            <p class="rider-text">
+              This is the content for the Riders tab. Style it to fit your needs.
             </p>
           </div>
         </div>
@@ -102,8 +132,16 @@ function selectTab(tab) {
   }
 }
 
-/* Apply the animation to the element */
+/* Apply the animation to the rotating element */
 .rotate-animation {
-  animation: rotate 2s linear infinite; /* Adjust timing as needed */
+  animation: rotate 2s linear infinite;
+}
+
+/* GSAP default animation styling */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
 }
 </style>

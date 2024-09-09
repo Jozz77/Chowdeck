@@ -16,8 +16,8 @@ export const theme = {
     },
     colors: {
       'Primary': '#0C513F',
-      // 'Secondary': '#0A8E26',
-      // "White": '#FFFFFF',
+      'Secondary': '#FFC501',
+      "Green": '#0C513F',
       // 'OtherWhite': '#F8F8F8',
       // 'FooterGray': '#F0F0F0',
       // 'Black': '#222222',

@@ -11,3 +11,10 @@
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #000000;
 }
+
+.whiteBg {
+  background-image: url("../views/Home/Assets/white.svg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
