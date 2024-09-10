@@ -68,7 +68,7 @@ const clonedQuickData = ref([...quickData.value, ...quickData.value]);
     <section
       class="mt-[-15%]  bg-Secondary mx-[5%] rounded-[16px] py-6 px-[5%]"
     >
-      <h2 class="text-[3.5rem] font-black text-center">Explore categories</h2>
+      <h2 class="text-[3.2rem] font-black text-center">Explore categories</h2>
 
       <div class="w-[15%] mt-8 mx-auto">
         <img src="../Assets/bottle.svg" class="w-full" alt="bottle" />
@@ -77,16 +77,16 @@ const clonedQuickData = ref([...quickData.value, ...quickData.value]);
 
     <section class="flex mt-10 justify-between px-[5%] items-center">
       <div class="w-[40%] relative">
-        <h3 class="text-[3rem] leading-[130%] text-white font-black">
+        <h3 class="text-[2.7rem] leading-[130%] text-white font-black">
           Chowdeck has <br />
           you covered
         </h3>
-        <div class="w-[30%] absolute bottom-0 right-0 mt-8 mx-auto">
+        <div class="w-[30%] absolute bottom-[-10%] right-[10%] mt-8 mx-auto">
           <img src="../Assets/plates.svg" class="w-full" alt="plates" />
         </div>
       </div>
       <div class="w-[40%]">
-        <p class="text-[1.2rem] text-white">
+        <p class="text-[1.1rem] text-white">
           Hungry? Too tired to cook? Have friends over, or do you simply need to
           chop life? Download Chowdeck, and let’s deliver happiness to your
           doorstep in minutes.

@@ -53,11 +53,11 @@ const poplularLinks = ref([
             <div>
               <img src="./Assets/star.svg" alt="Star" />
             </div>
-            <h3 class="leading-none text-white font-black text-[2.3rem]">
+            <h3 class="leading-none text-white font-black text-[2.2rem]">
               Cool stuff only
             </h3>
           </div>
-          <p class="text-[#FFEDB3] text-[0.9rem]">
+          <p class="text-[#FFEDB3] text-[0.85rem]">
             Subscribe to our newsletter
           </p>
         </section>
@@ -74,11 +74,11 @@ const poplularLinks = ref([
       <div
         class="border-b-[1px] row-span-4 col-span-7 border-[#ffffff37] flex items-center justify-between"
       >
-        <div class="py-6 w-full">
+        <div class="py-4 w-full">
           <input
             type="text"
             name=""
-            class="outline-0 text-[1.05rem] bg-transparent text-[#ffffff58] placeholder:text-[#ffffff58] font-black"
+            class="outline-0 text-[1rem] bg-transparent text-[#ffffff58] placeholder:text-[#ffffff58] font-black"
             placeholder="yourname@email.com"
           />
         </div>
@@ -152,45 +152,45 @@ const poplularLinks = ref([
       </div>
 
       <div
-        class="flex gap-2 py-6 justify-center pl-[10%] col-span-3 border-t-[1px] border-r-[1px] border-[#ffffff37] row-span-1 items-center"
+        class="flex gap-2 py-4 justify-center pl-[10%] col-span-3 border-t-[1px] border-r-[1px] border-[#ffffff37] row-span-1 items-center"
       >
         <div>
           <img src="./Assets/tweet.svg" alt="Star" />
         </div>
         <RouterLink to="">
-          <p class="text-[1rem] leading-none font-black text-white">Twitter</p>
+          <p class="text-[0.9rem] xxl:text-[1rem] leading-none font-black text-white">Twitter</p>
         </RouterLink>
       </div>
       <div
-        class="flex gap-2 py-6 justify-center pl-[10%] col-span-3 border-t-[1px] border-[#ffffff37] row-span-1 items-center"
+        class="flex gap-2 py-4 justify-center pl-[10%] col-span-3 border-t-[1px] border-[#ffffff37] row-span-1 items-center"
       >
         <div>
           <img src="./Assets/instagram.svg" alt="Star" />
         </div>
         <RouterLink to="">
-          <p class="text-[1rem] leading-none font-black text-white">
+          <p class="text-[0.9rem] xxl:text-[1rem] leading-none font-black text-white">
             Instagram
           </p>
         </RouterLink>
       </div>
       <div
-        class="flex gap-2 py-6 justify-center pl-[10%] col-span-3 border-t-[1px] border-r-[1px] border-[#ffffff37] row-span-1 items-center"
+        class="flex gap-2 py-4 justify-center pl-[10%] col-span-3 border-t-[1px] border-r-[1px] border-[#ffffff37] row-span-1 items-center"
       >
         <div>
           <img src="./Assets/facebook.svg" alt="Star" />
         </div>
         <RouterLink to="">
-          <p class="text-[1rem] leading-none font-black text-white">Facebook</p>
+          <p class="text-[0.9rem] xxl:text-[1rem] leading-none font-black text-white">Facebook</p>
         </RouterLink>
       </div>
       <div
-        class="flex gap-2 py-6 justify-center pl-[10%] col-span-3 border-t-[1px] border-[#ffffff37] row-span-1 items-center"
+        class="flex gap-2 py-4 justify-center pl-[10%] col-span-3 border-t-[1px] border-[#ffffff37] row-span-1 items-center"
       >
         <div>
           <img src="./Assets/linkedin.svg" alt="Star" />
         </div>
         <RouterLink to="">
-          <p class="text-[1rem] leading-none font-black text-white">LinkedIn</p>
+          <p class="text-[0.9rem] xxl:text-[1rem] leading-none font-black text-white">LinkedIn</p>
         </RouterLink>
       </div>
     </section>

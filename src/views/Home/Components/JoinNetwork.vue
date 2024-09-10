@@ -96,8 +96,8 @@ onMounted(() => {
           <div>
             <img src="../Assets/circle.svg" alt="" />
           </div>
-          <h3 class="font-black text-[1.4rem]">Start selling</h3>
-          <p>
+          <h3 class="font-black text-[1.3rem]">Start selling</h3>
+          <p class=" text-[0.95rem] ">
             Are you a restaurant owner looking to grow your business? Reach new
             customers when you join our network.
           </p>

@@ -5,29 +5,48 @@ import { ref } from "vue";
 const faqs = ref([
   {
     id: 1,
-    question: "What is your return policy?",
+    question: "What is Chowdeck?",
     answer:
-      "Our return policy allows you to return items within 30 days of purchase. The items must be in their original condition.",
+      "Chowdeck is a technology company that provides logistics services to both vendors and consumers. This allows food vendors to deliver meals seamlessly while also providing consumers with an easy platform to order meals from their favourite restaurants in their city.",
   },
   {
     id: 2,
-    question: "How long does shipping take?",
+    question: "What locations do we currently deliver to?",
     answer:
-      "Shipping usually takes between 5-7 business days depending on your location. You will receive a tracking number once your order has shipped.",
+      "Chowdeck currently delivers to major cities across the country. Our delivery network is rapidly expanding to reach more areas, and we strive to offer timely delivery services to all our customers within these locations.",
   },
   {
     id: 3,
-    question: "Do you offer international shipping?",
+    question: "What is Chowdeck wallet?",
     answer:
-      "Yes, we offer international shipping to select countries. Shipping costs and times may vary depending on your location.",
+      "Chowdeck Wallet is a digital wallet that allows users to store funds for easier transactions. With the Chowdeck Wallet, users can top up their balance and use it to make faster and more convenient payments when ordering meals through the platform.",
   },
   {
     id: 4,
-    question: "Can I cancel my order?",
+    question: "What is Chowscore?",
     answer:
-      "You can cancel your order within 24 hours of placing it. Please contact our support team to request a cancellation.",
+      "Chowscore is a rating system that allows customers to review their experience with restaurants and delivery services on the Chowdeck platform. It helps to ensure that vendors maintain high standards, and allows customers to make informed decisions when choosing where to order from.",
+  },
+  {
+    id: 5,
+    question: "What is Service fee?",
+    answer:
+      "The service fee is a small charge applied to each order to cover operational costs like payment processing, customer support, and platform maintenance. It ensures that Chowdeck can continue to provide a seamless ordering and delivery experience.",
+  },
+  {
+    id: 6,
+    question: "Why do we charge Service fee?",
+    answer:
+      "The service fee is necessary to maintain the quality of our services. It helps cover the costs of running the platform, including technology infrastructure, customer service, and ensuring the smooth operation of logistics for both vendors and customers.",
+  },
+  {
+    id: 7,
+    question: "What is Surge fee?",
+    answer:
+      "The surge fee is an additional charge applied during times of high demand. It helps ensure that there are enough delivery drivers available to meet the increased demand, ensuring quicker deliveries even during peak times.",
   },
 ]);
+
 
 // The currently selected question
 const selectedQuestion = ref(0);
@@ -39,35 +58,46 @@ const selectQuestion = (index) => {
 </script>
 
 <template>
-  <div class="faq-container bg-white mt-[-10%] border-2 rounded-[24px] mx-[5%] py-8 border-black flex">
+  <div
+    class="faq-container bg-white mt-[-10%] border-2 rounded-[24px] mx-[5%] py-8 border-black flex"
+  >
     <!-- Left side: List of questions (50%) -->
     <div class="faq-questions w-[50%] px-8">
-        <h2 class=" font-black text-Green text-[3.5rem] ">FAQs.</h2>
-      <ul class="mt-6 space-y-4">
+      <h2 class="font-black text-Green text-[2.5rem]">FAQs.</h2>
+      <ul class="mt-6 space-y-3">
         <li
           v-for="(faq, index) in faqs"
           :key="faq.id"
-          :class="{' bg-black rounded-[8px] text-white': index === selectedQuestion}"
+          :class="{
+            ' bg-black rounded-[8px] text-white': index === selectedQuestion,
+            'text-Primary': index !== selectedQuestion,
+          }"
           @click="selectQuestion(index)"
-          class="cursor-pointer p-4 border-[1px] rounded-[8px] bg-[#0c513f09] border-gray-300 hover:bg-[#0c513f24] transition-colors duration-300 ease-in-out"
+          class="cursor-pointer px-[5%] py-4 flex items-center justify-between border-[1px] rounded-[8px]  border-gray-300  transition-colors duration-300 ease-in-out"
         >
-          {{ faq.question }}
+         <p :class="{
+            '  text-white': index === selectedQuestion,
+            'text-Primary': index !== selectedQuestion,
+          }" class=" font-black text-[0.9rem] "> {{ faq.question }}</p>
+          <div v-if="index === selectedQuestion">
+            <img src="../Assets/circle.svg" alt="" />
+          </div>
         </li>
       </ul>
     </div>
 
     <!-- Right side: Answer display (50%) -->
     <div class="faq-answer w-[50%] px-8 relative">
-         <h2 class=" font-black text-Green text-[3.5rem] ">Ans.</h2>
+      <h2 class="font-black text-Green text-[2.5rem]">Ans.</h2>
       <transition name="fade" mode="out-in">
-        <div class=" bg-[#FFC501] rounded-[16px] mt-4 px-[5%] py-8" key="answer-{{ selectedQuestion }}">
-          <!-- <h2 class="font-bold text-[1.5rem] mb-4">
-            {{ faqs[selectedQuestion].question }}
-          </h2> -->
+        <div
+          class="bg-[#FFC501]  rounded-[16px] mt-4 px-[5%] py-8"
+          key="answer-{{ selectedQuestion }}"
+        >
           <div>
-            <img src="../Assets/circle.svg" alt="">
+            <img src="../Assets/circle.svg" alt="" />
           </div>
-          <p class="text-[1.1rem] mt-6 ">
+          <p class="text-[1rem] font-medium mt-4">
             {{ faqs[selectedQuestion].answer }}
           </p>
         </div>
@@ -80,7 +110,8 @@ const selectQuestion = (index) => {
 
 <style scoped>
 /* Smooth fade animation for the answer section */
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s ease-in-out;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
@@ -90,8 +121,8 @@ const selectQuestion = (index) => {
 /* Style for active question */
 .active-question {
   font-weight: bold;
-  color: #1DA1F2;
-  border-left: 4px solid #1DA1F2;
+  color: #1da1f2;
+  border-left: 4px solid #1da1f2;
   background-color: #f0f8ff;
 }
 </style>
