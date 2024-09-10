@@ -4,6 +4,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { PrArrowDown } from "oh-vue-icons/icons";
+import join1 from "../Assets/join1.svg";
+import joinIcon1 from "../Assets/circle.svg";
+import join2 from "../Assets/join2.svg";
+import joinIcon2 from "../Assets/joinIcon2.svg";
+import join3 from "../Assets/join3.svg";
+import joinIcon3 from "../Assets/joinIcon3.svg";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -11,24 +17,24 @@ gsap.registerPlugin(ScrollTrigger);
 const joinData = ref([
   {
     id: 1,
-    icon: "",
+    icon: joinIcon1,
     title: `Start selling`,
     text: `Are you a restaurant owner looking to grow your business? Reach new customers when you join our network.`,
-    image: "",
+    image: join1,
   },
   {
     id: 2,
-    icon: "",
-    title: `Start selling`,
-    text: `Are you a restaurant owner looking to grow your business? Reach new customers when you join our network.`,
-    image: "",
+    icon: joinIcon2,
+    title: `Deliver happiness`,
+    text: `Join our elite league of delivery riders delivering happiness to customers and earn to achieve your dreams while at it.`,
+    image: join2,
   },
   {
     id: 3,
-    icon: "",
-    title: `Start selling`,
-    text: `Are you a restaurant owner looking to grow your business? Reach new customers when you join our network.`,
-    image: "",
+    icon: joinIcon3,
+   title: `Behind the scenes`,
+    text: `If you are passionate about helping us achieve our goal to deliver meals seamlessly, come join the team.`,
+    image: join3,
   },
 ]);
 
@@ -49,7 +55,7 @@ onMounted(() => {
         start: "top 80%", // When the top of the section is 80% from the top of the viewport
         end: "bottom top", // End when the bottom of the section hits the top of the viewport
         // toggleActions: "play none none reverse",
-        once: true
+        once: true,
       },
     }
   );
@@ -68,7 +74,7 @@ onMounted(() => {
         start: "top 80%", // When the top of the section is 80% from the top of the viewport
         end: "bottom top", // End when the bottom of the section hits the top of the viewport
         // toggleActions: "play none none reverse",
-        once: true
+        once: true,
       },
     }
   );
@@ -90,25 +96,24 @@ onMounted(() => {
       <div
         v-for="join in joinData"
         :key="join.id"
-        class="join-item w-[30%] border-2 rounded-[16px] border-black"
+        class="join-item w-[30%] border-2 overflow-hidden rounded-[16px] border-black"
       >
         <section class="py-6 flex flex-col gap-3 px-[5%]">
-          <div>
-            <img src="../Assets/circle.svg" alt="" />
+          <div class="w-[8%] h-5 ">
+            <img :src="join.icon" class=" w-full" alt="" />
           </div>
-          <h3 class="font-black text-[1.3rem]">Start selling</h3>
-          <p class=" text-[0.95rem] ">
-            Are you a restaurant owner looking to grow your business? Reach new
-            customers when you join our network.
+          <h3 class="font-black text-[1.3rem]">{{join.title}}</h3>
+          <p class="text-[0.95rem]">
+            {{join.text}}
           </p>
           <button
-            class="hover:[blue] uppercase text-left text-[0.9rem] font-semibold"
+            class="hover:[blue] tracking-[3px] uppercase text-left text-[0.9rem] font-black"
           >
             see more
           </button>
         </section>
         <section>
-          <img src="../Assets/join1.svg" class="w-full" alt="" />
+          <img :src="join.image" class="w-full mb-[-1%]" alt="" />
         </section>
       </div>
     </section>

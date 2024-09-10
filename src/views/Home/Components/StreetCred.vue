@@ -1,40 +1,79 @@
 <script setup>
 import { ref } from "vue";
+import tweet1 from '../Assets/tweet1.png'
+import tweet2 from '../Assets/tweet2.png'
+import tweet3 from '../Assets/tweet3.png'
+import tweet4 from '../Assets/tweet4.png'
+import tweet5 from '../Assets/tweet5.png'
+import tweet6 from '../Assets/tweet6.png'
+import tweet7 from '../Assets/tweet7.png'
+import tweet8 from '../Assets/tweet8.png'
 
 const tweetData = ref([
   {
     id: 1,
-    name: "Temz👑",
-    username: "@TheRealTemz",
-    text: `I wan go baff but I can’t. Because chowdeck riders move like
-              thieves in the night. Before you cough, rider don reach your gate.
-              The efficiency and speed is crazy`,
+    name: "Fá",
+    img: tweet1,
+    username: "@victorfatanmi",
+    text: `Chowdeck is the best Nigerian mobile app I have ever used. Yes, quote me.`,
+  },
+  {
+    id: 2,
+    name: "Teffy Billion Dollars",
+    img: tweet2,
+    username: "@Jegc_tola",
+    text: `My Yam and pepper sauce just came in from King Glab and Chowdeck and my Godddd! This is the best thing to happen to me this week! https://t.co/DBm6E2u2hQ`,
+  },
+  {
+    id: 3,
+    name: "先生",
+    img: tweet3,
+    username: "@TheFisola",
+    text: `Chowdeck delivered in 20 minutes. Rider said “pardon my lateness” 💀.`,
+  },
+  {
+    id: 4,
+    name: "Folasade Daini",
+    img: tweet4,
+    username: "@folasade_daini",
+    text: `Have you seen the new list of vendors on Chowdeck?? Omo. It is giving 🔥🔥`,
+  },
+]);
+
+const tweetData2 = ref([
+  {
+    id: 1,
+    name: "THEE AWAZI",
+    img: tweet5,
+    username: "@THEAWAZI",
+    text: `Food!!! 🤤💚 So excited that I can now order through @chowdeck on the island. Go team Chowdeck!!!🚀 https://t.co/0Sr3bUid46`,
   },
   {
     id: 2,
     name: "Temz👑",
+    img: tweet6,
     username: "@TheRealTemz",
-    text: `I wan go baff but I can’t. Because chowdeck riders move like
-              thieves in the night.`,
+    text: `I wan go baff but I can’t. Because chowdeck riders move like thieves in the night. Before you cough, rider don reach your gate. The efficiency and speed is crazy`,
   },
   {
     id: 3,
-    name: "Temz👑",
-    username: "@TheRealTemz",
-    text: `I wan go baff but I can’t. Because chowdeck riders move like
-              thieves in the night.`,
+    name: "Wine",
+    img: tweet7,
+    username: "@RedWhinee",
+    text: `I genuinely love @chowdeck A top app with with service`,
   },
   {
     id: 4,
-    name: "Temz👑",
-    username: "@TheRealTemz",
-    text: `I wan go baff but I can’t. Because chowdeck riders move like
-              thieves in the night. Before you cough, rider don reach your gate.`,
+    name: "Scheherazade",
+    img: tweet8,
+    username: "@_chiisom",
+    text: `You’ll order Chowdeck and say yeah I have about 20 minutes to get home. In 5 minutes, delivery man will tell you he’s outside 😭`,
   },
 ]);
 
 // Clone the data to ensure it loops seamlessly
 const clonedTweetData = ref([...tweetData.value, ...tweetData.value]);
+const clonedTweetData2 = ref([...tweetData2.value, ...tweetData2.value]);
 </script>
 
 <template>
@@ -67,10 +106,10 @@ const clonedTweetData = ref([...tweetData.value, ...tweetData.value]);
             >
               <div class="flex justify-between items-center">
                 <div class="gap-3 flex">
-                  <div>
+                  <div class="">
                     <img
-                      src="../Assets/tweet1.png"
-                      class="w-full"
+                      :src="tweet.img"
+                      class="w-full rounded-full"
                       alt="tweet"
                     />
                   </div>
@@ -100,7 +139,7 @@ const clonedTweetData = ref([...tweetData.value, ...tweetData.value]);
       <div class="scroll-container">
         <section class="scroll-content2">
           <section
-            v-for="tweet in clonedTweetData"
+            v-for="tweet in clonedTweetData2"
             :key="tweet.id"
             class="tweet-card"
           >
@@ -111,8 +150,8 @@ const clonedTweetData = ref([...tweetData.value, ...tweetData.value]);
                 <div class="gap-3 flex">
                   <div>
                     <img
-                      src="../Assets/tweet1.png"
-                      class="w-full"
+                      :src="tweet.img"
+                      class="w-full rounded-full"
                       alt="tweet"
                     />
                   </div>

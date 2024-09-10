@@ -1,38 +1,40 @@
 <script setup>
 import { ref } from "vue";
-import quickImg from "../Assets/circle.svg";
 import explore1 from "../Assets/explore1.png";
+import explore2 from "../Assets/explore2.png";
+import explore3 from "../Assets/explore3.png";
+import explore4 from "../Assets/explore4.png";
+import quick1 from "../Assets/quick1.svg";
+import quick2 from "../Assets/quick2.svg";
+import quick3 from "../Assets/quick3.svg";
+import quick4 from "../Assets/quick4.svg";
+import quick5 from "../Assets/quick5.svg";
 
 const quickData = ref([
   {
     id: 1,
-    img: quickImg,
+    img: quick1,
     text: "Quick and easy onboarding",
   },
   {
     id: 2,
-    img: quickImg,
-    text: "Quick and easy onboarding",
+    img: quick2,
+    text: "Quality meal choices",
   },
   {
     id: 3,
-    img: quickImg,
-    text: "Quick and easy onboarding",
+    img: quick3,
+    text: "Live updates on orders",
   },
   {
     id: 4,
-    img: quickImg,
-    text: "Quick and easy onboarding",
+    img: quick4,
+    text: "Highly rated riders",
   },
   {
     id: 5,
-    img: quickImg,
-    text: "Quick and easy onboarding",
-  },
-  {
-    id: 6,
-    img: quickImg,
-    text: "Quick and easy onboarding",
+    img: quick5,
+    text: "20/7 support for customers and vendors",
   },
 ]);
 
@@ -44,17 +46,17 @@ const exploreImages = ref([
   },
   {
     id: 2,
-    img: explore1,
+    img: explore2,
     style: "mt-8",
   },
   {
     id: 3,
-    img: explore1,
+    img: explore3,
     style: "mt-0",
   },
   {
     id: 4,
-    img: explore1,
+    img: explore4,
     style: "mt-8",
   },
 ]);
@@ -100,10 +102,10 @@ const clonedQuickData = ref([...quickData.value, ...quickData.value]);
         <div
           v-for="quick in clonedQuickData"
           :key="quick.id"
-          class="flex gap-2 items-center rounded-[8px] bg-[#ffffff2c] py-2 px-6"
+          class="flex gap-2 items-center rounded-[8px] bg-[#ffffff2c] py-3 px-6"
         >
-          <div>
-            <img :src="quick.img" alt="image" />
+          <div class=" ">
+            <img :src="quick.img" class=" w-full" alt="image" />
           </div>
           <p class="text-white text-base font-semibold text-[0.9rem]">
             {{ quick.text }}

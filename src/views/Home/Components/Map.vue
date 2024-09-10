@@ -8,31 +8,31 @@ const mapData = ref([
   },
   {
     id: 2,
-    text: "Sweet Sensation",
+    text: "Mr Biggs- Agidingbi",
   },
   {
     id: 3,
-    text: "Sweet Sensation",
+    text: "Magrellos",
   },
   {
     id: 4,
-    text: "Sweet Sensation",
+    text: "Old English Superstore and Bakery",
   },
   {
     id: 5,
-    text: "Sweet Sensation",
+    text: "Goodypot foodies enterprises",
   },
   {
     id: 6,
-    text: "Sweet Sensation",
+    text: "Belle First.Com",
   },
   {
     id: 7,
-    text: "Sweet Sensation",
+    text: "So Fresh - Ogudu",
   },
   {
     id: 8,
-    text: "Sweet Sensation",
+    text: "Mr Biggs- Ikoyi",
   },
 ]);
 </script>
