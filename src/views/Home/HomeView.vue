@@ -8,6 +8,7 @@ import StreetCred from './Components/StreetCred.vue'
 import Stories from './Components/Stories.vue'
 import FAQs from './Components/FAQs.vue'
 import PlaceOrder from './Components/PlaceOrder.vue'
+import Footer from '../../components/Footer/Footer.vue'
 
 </script>
 
@@ -24,6 +25,7 @@ import PlaceOrder from './Components/PlaceOrder.vue'
     <div class=" bg-black mt-32 pt-[5%] " >
       <FAQs />
       <PlaceOrder />
+      <Footer />
     </div>
   </main>
 </template>
