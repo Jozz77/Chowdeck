@@ -9,6 +9,7 @@ import quick2 from "../Assets/quick2.svg";
 import quick3 from "../Assets/quick3.svg";
 import quick4 from "../Assets/quick4.svg";
 import quick5 from "../Assets/quick5.svg";
+import bottle1 from "../Assets/bottle.svg";
 
 const quickData = ref([
   {
@@ -63,17 +64,109 @@ const exploreImages = ref([
 
 // Clone the data for smooth infinite scrolling
 const clonedQuickData = ref([...quickData.value, ...quickData.value]);
+
+// Sample slide data (you can replace with actual images)
+const slides = ref([
+  { id: 1, image: bottle1 },
+  { id: 2, image: bottle1 },
+  { id: 3, image: bottle1 },
+]);
+
+const activeSlide = ref(0);
+
+// Function to go to the next slide
+const nextSlide = () => {
+  if (activeSlide.value < slides.value.length - 1) {
+    activeSlide.value++;
+  } else {
+    activeSlide.value = 0; // Loop back to the first slide
+  }
+};
+
+// Function to go to the previous slide
+const prevSlide = () => {
+  if (activeSlide.value > 0) {
+    activeSlide.value--;
+  } else {
+    activeSlide.value = slides.value.length - 1; // Loop back to the last slide
+  }
+};
+
+// Function to go to a specific slide based on pagination click
+const goToSlide = (index) => {
+  activeSlide.value = index;
+};
 </script>
 
-<template >
+<template>
   <div class="bg-Primary mt-40 pt-[5%] pb-32">
     <section
-      class="mt-[-15%]  bg-Secondary mx-[5%] rounded-[16px] py-6 px-[5%]"
+      class="mt-[-15%] bg-Secondary mx-[5%] rounded-[16px] py-6 px-[3%] relative"
     >
       <h2 class="text-[3.2rem] font-black text-center">Explore categories</h2>
 
-      <div class="w-[15%] mt-8 mx-auto">
-        <img src="../Assets/bottle.svg" class="w-full" alt="bottle" />
+      <!-- Slider -->
+      <div class="flex justify-center mt-8 relative">
+        <div class="w-[15%]">
+          <img
+            :src="slides[activeSlide].image"
+            class="w-full"
+            alt="category-image"
+          />
+        </div>
+      </div>
+
+      <div class="flex justify-between">
+        <!-- Pagination (Numbered) -->
+        <div class="flex justify-center mt-4 space-x-2">
+          <div
+            class="border-2 bg-black rounded-full h-12 w-12 flex justify-center items-center border-black"
+          >
+            <i
+              class="fa-solid fa-location-dot text-[1.5rem] text-Secondary"
+            ></i>
+          </div>
+          <span
+            v-for="(slide, index) in slides"
+            :key="slide.id"
+            @click="goToSlide(index)"
+            :class="[
+              'cursor-pointer h-12 w-12 flex items-center border-2 border-black justify-center rounded-full text-[1rem] font-medium',
+              index === activeSlide
+                ? 'bg-transparent text-black'
+                : 'bg-black text-Secondary',
+            ]"
+          >
+            0{{ index + 1 }}
+          </span>
+          <div
+            class="border-2 bg-black rounded-full h-12 w-12 flex justify-center items-center border-black"
+          >
+            <div class="w-[70%]">
+              <img src="../Assets/diamond.svg" class="w-full" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Previous & Next Buttons -->
+        <div class="flex gap-2 items-center mt-4">
+          <button
+            @click="prevSlide"
+            class="border-2 bg-black hover:bg-[#000000d3] hover:border-[#000000d3] rounded-full h-12 w-12 flex justify-center items-center border-black"
+          >
+            <i
+              class="fa-solid fa-arrow-left text-[1.5rem] text-Secondary"
+            ></i>
+          </button>
+          <button
+            @click="nextSlide"
+            class="border-2 bg-black hover:bg-[#000000d3] hover:border-[#000000d3]  rounded-full h-12 w-12 flex justify-center items-center border-black"
+          >
+            <i
+              class="fa-solid fa-arrow-right text-[1.5rem] text-Secondary"
+            ></i>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -105,7 +198,7 @@ const clonedQuickData = ref([...quickData.value, ...quickData.value]);
           class="flex gap-2 items-center rounded-[8px] bg-[#ffffff2c] py-3 px-6"
         >
           <div class=" ">
-            <img :src="quick.img" class=" w-full" alt="image" />
+            <img :src="quick.img" class="w-full" alt="image" />
           </div>
           <p class="text-white text-base font-semibold text-[0.9rem]">
             {{ quick.text }}
@@ -123,15 +216,14 @@ const clonedQuickData = ref([...quickData.value, ...quickData.value]);
         <img :src="explore.img" alt="image" class="w-full" />
       </div>
     </section>
-
-    
-
-
   </div>
-  
 </template>
 
 <style scoped>
+button {
+  transition: background-color 0.3s ease;
+}
+
 .scroll-container {
   overflow: hidden;
   white-space: nowrap;
