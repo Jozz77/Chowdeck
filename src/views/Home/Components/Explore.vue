@@ -64,6 +64,7 @@ const exploreImages = ref([
 
 // Clone the data for smooth infinite scrolling
 const clonedQuickData = ref([...quickData.value, ...quickData.value]);
+const clonedExploreData = ref([...exploreImages.value, ...exploreImages.value]);
 
 // Sample slide data (you can replace with actual images)
 const slides = ref([
@@ -154,17 +155,13 @@ const goToSlide = (index) => {
             @click="prevSlide"
             class="border-2 bg-black hover:bg-[#000000d3] hover:border-[#000000d3] rounded-full h-12 w-12 flex justify-center items-center border-black"
           >
-            <i
-              class="fa-solid fa-arrow-left text-[1.5rem] text-Secondary"
-            ></i>
+            <i class="fa-solid fa-arrow-left text-[1.5rem] text-Secondary"></i>
           </button>
           <button
             @click="nextSlide"
-            class="border-2 bg-black hover:bg-[#000000d3] hover:border-[#000000d3]  rounded-full h-12 w-12 flex justify-center items-center border-black"
+            class="border-2 bg-black hover:bg-[#000000d3] hover:border-[#000000d3] rounded-full h-12 w-12 flex justify-center items-center border-black"
           >
-            <i
-              class="fa-solid fa-arrow-right text-[1.5rem] text-Secondary"
-            ></i>
+            <i class="fa-solid fa-arrow-right text-[1.5rem] text-Secondary"></i>
           </button>
         </div>
       </div>
@@ -208,13 +205,17 @@ const goToSlide = (index) => {
     </section>
 
     <section class="flex px-[1%] justify-between mt-16">
-      <div
-        v-for="explore in exploreImages"
-        :key="explore.id"
-        :class="`w-[23%] ${explore.style}`"
-      >
-        <img :src="explore.img" alt="image" class="w-full" />
-      </div>
+      <section class="scroll-container ">
+        <div class="scroll-content">
+          <div
+            v-for="explore in clonedExploreData"
+            :key="explore.id"
+            :class="`w-[23%] ${explore.style}`"
+          >
+            <img :src="explore.img" alt="image" class="w-full" />
+          </div>
+        </div>
+      </section>
     </section>
   </div>
 </template>

@@ -59,11 +59,16 @@ const selectQuestion = (index) => {
 
 <template>
   <div
-    class="faq-container bg-white mt-[-10%] border-2 rounded-[24px] mx-[5%] py-8 border-black flex"
+    class="faq-container bg-white mt-[-13%] border-2 rounded-[24px] mx-[5%] py-8 px-[3%] border-black "
   >
-    <!-- Left side: List of questions (50%) -->
-    <div class="faq-questions w-[50%] px-8">
-      <h2 class="font-black text-Green text-[2.5rem]">FAQs.</h2>
+  <div class=" flex justify-between gap-[3%]">
+    <h2 class="font-black w-[50%] text-Green text-[2.7rem]">FAQs.</h2>
+    <h2 class="font-black w-[50%] text-Green text-[2.7rem]">Ans.</h2>
+  </div>
+    <section class="flex gap-[3%]">
+      <!-- Left side: List of questions (50%) -->
+    <div class="faq-questions w-[50%] ">
+      
       <ul class="mt-6 space-y-3">
         <li
           v-for="(faq, index) in faqs"
@@ -79,30 +84,29 @@ const selectQuestion = (index) => {
             '  text-white': index === selectedQuestion,
             'text-Primary': index !== selectedQuestion,
           }" class=" font-black text-[0.9rem] "> {{ faq.question }}</p>
-          <div v-if="index === selectedQuestion">
-            <img src="../Assets/circle.svg" alt="" />
+          <div class=" w-[5%]" v-if="index === selectedQuestion">
+            <img src="../Assets/yel-oct.svg" class=" w-full" alt="icon" />
           </div>
         </li>
       </ul>
     </div>
 
     <!-- Right side: Answer display (50%) -->
-    <div class="faq-answer w-[50%] px-8 relative">
-      <h2 class="font-black text-Green text-[2.5rem]">Ans.</h2>
-      <transition name="fade" mode="out-in">
+      <transition name="fade" mode="out-in" class="faq-answer w-[50%] relative">
         <div
-          class="bg-[#FFC501]  rounded-[16px] mt-4 px-[5%] py-8"
+          class="bg-[#FFC501]  rounded-[16px] mt-4 px-[3%] py-8"
           key="answer-{{ selectedQuestion }}"
         >
-          <div>
-            <img src="../Assets/circle.svg" alt="" />
+          <div class=" w-[5%]">
+            <img src="../Assets/black-oct.svg" class=" w-full" alt="icon" />
           </div>
-          <p class="text-[1rem] font-medium mt-4">
+          <p class="text-[1.1rem] font-medium mt-4">
             {{ faqs[selectedQuestion].answer }}
           </p>
         </div>
       </transition>
-    </div>
+    </section>
+
   </div>
 </template>
 

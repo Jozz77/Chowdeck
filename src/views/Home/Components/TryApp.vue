@@ -65,7 +65,7 @@ watch(activeTab, (newTab) => {
 <template>
   <div class="mt-20 tab-section">
     <section class="flex justify-center py-3 tab-buttons">
-      <div class="bg-[#FFF3CC] text-base font-medium rounded-full">
+      <div class="bg-[#FFF3CC] p-1 text-base font-medium rounded-full">
         <button
           v-for="tab in tabs"
           :key="tab.name"
@@ -79,7 +79,7 @@ watch(activeTab, (newTab) => {
     </section>
 
     <!-- Display Tab Content -->
-    <section class="mt-12 px-[5%]">
+    <section class="mt-8 px-[5%]">
       <transition name="fade">
         <div key="tab-content">
           <div v-if="activeTab.name === 'Customer'" class="text-center">
@@ -101,20 +101,38 @@ watch(activeTab, (newTab) => {
           </div>
 
           <div v-if="activeTab.name === 'Vendors'" class="text-center">
-            <section>
-              <h2 class="text-2xl font-bold vendor-heading">Vendors Content</h2>
-              <p class="vendor-text">
-                This is the content for the Vendors tab. Add any custom styles here.
+            <section class=" flex flex-col gap-4">
+              <h2 class="text-[3.5rem] font-black customer-heading">All in One</h2>
+              <p class="px-[25%] tracking-wider text-[1.1rem] customer-text">
+                Unlock new levels of growth with seamless menu and orders management, multiple branches and team, easy payouts withdrawal and a lot more.
               </p>
+            </section>
+
+            <section class="relative mx-auto w-[30%] mt-20 ">
+              <img :src="Phone" class="w-full phone-img" alt="phone" />
+
+              <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
+                <img src="../Assets/roll.svg" class="w-full " alt="roll" />
+              </div>
             </section>
           </div>
 
           <div v-if="activeTab.name === 'Riders'" class="text-center">
-            <h2 class="text-2xl font-bold rider-heading">Riders Content</h2>
-            <p class="rider-text">
-              This is the content for the Riders tab. Style it to fit your needs.
-            </p>
-          </div>
+            <section class=" flex flex-col gap-4">
+              <h2 class="text-[3.5rem] font-black customer-heading">Become a Champ</h2>
+              <p class="px-[25%] tracking-wider text-[1.1rem] customer-text">
+                Choose your own working hours, ride your choice of bike, track your metrics, earn bonuses and withdraw easily to your account. Do more with our app.
+              </p>
+            </section>
+
+            <section class="relative mx-auto w-[30%] mt-20 ">
+              <img :src="Phone" class="w-full phone-img" alt="phone" />
+
+              <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
+                <img src="../Assets/roll.svg" class="w-full " alt="roll" />
+              </div>
+            </section>  
+        </div>
         </div>
       </transition>
     </section>

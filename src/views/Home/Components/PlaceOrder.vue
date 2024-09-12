@@ -8,22 +8,22 @@
       </h2>
       <div class="mt-10">
         <button
-          class="bg-white flex items-center gap-2 rounded-[8px] px-4 py-2"
+          class="bg-white flex items-center gap-2 rounded-[8px] px-4 py-3"
         >
-          <div>
+          <div class=" w-[8%]">
             <img src="../Assets/svg.svg" class="w-full" alt="Playstore" />
           </div>
-          <span class="text-[0.85rem] font-medium"
+          <span class="text-[0.9rem] font-medium"
             >Download on Google Play</span
           >
         </button>
         <button
-          class="bg-white mt-4 flex items-center gap-2 rounded-[8px] px-4 py-2"
+          class="bg-white mt-4 flex items-center gap-2 rounded-[8px] px-4 py-3"
         >
           <div>
-            <img src="../Assets/svg.svg" class="w-full" alt="Playstore" />
+            <i class="fa-brands fa-apple text-black text-[1.2rem]"></i>
           </div>
-          <span class="text-[0.85rem] font-medium">Download on App Store</span>
+          <span class="text-[0.9rem] font-medium">Download on App Store</span>
         </button>
       </div>
 

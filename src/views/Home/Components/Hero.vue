@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { gsap } from 'gsap';
 import imgUrl from '../Assets/svg.svg';
 import Apple from '../Assets/Frame.svg';
@@ -39,30 +39,55 @@ onMounted(() => {
       duration: 3,
     });
 });
+
+const texts = [
+  'Se o ti jeun?',
+  'You don chow?',
+  // "You've eaten?",
+  'Have you eaten?'
+]; // Array of texts to cycle through
+
+const currentText = ref(texts[0]); // Start with the first text
+let currentIndex = 0;
+let intervalId = null;
+
+// Function to switch between texts every 5 seconds
+const switchText = () => {
+  currentIndex = (currentIndex + 1) % texts.length;
+  currentText.value = texts[currentIndex];
+};
+
+onMounted(() => {
+  intervalId = setInterval(switchText, 5000); // Switch text every 5 seconds
+});
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId); // Clean up interval when the component is unmounted
+});
+
 </script>
 
 <template>
   <div class="px-[5%] mt-20">
     <!-- Heading to animate -->
-    <h1 ref="headingRef" class="text-center text-[7rem] font-bold">
-      <!-- Se o ti jeun? -->
-      <!-- You don chop? -->
-      You've eaten?
+   <h1 ref="headingRef" class="text-[7rem] text-center animated-text font-bold">
+      {{ currentText }} 
+      <!-- you -->
     </h1>
 
     <!-- Buttons to animate -->
     <section class="flex items-center mt-12 justify-center gap-4">
       <button ref="buttonRef1" class="bg-[#0C513F] py-4 px-6 rounded-md flex gap-2 items-center">
-        <div>
+        <div class=" w-[10%]">
           <img alt="Playstore logo" class="w-full" :src="imgUrl" />
         </div>
         <p class="text-white text-[1rem]">Download on Google Play</p>
       </button>
 
       <button ref="buttonRef2" class="bg-[#0C513F] py-4 px-6 rounded-md flex gap-2 items-center">
-        <div>
-          <img alt="Apple logo" class="w-full" :src="Apple" />
-        </div>
+       <div>
+            <i class="fa-brands fa-apple text-white text-[1.5rem]"></i>
+          </div>
         <p class="text-white text-[1rem]">Download on the App Store</p>
       </button>
     </section>
@@ -77,5 +102,24 @@ onMounted(() => {
 <style scoped>
 .bg-Primary {
   background-color: #FFC501;
+}
+.animated-text {
+  position: relative;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+h1 {
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+/* Animation classes */
+.v-enter-from, .v-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.v-enter-to, .v-leave-from {
+  transform: translateY(0);
+  opacity: 1;
 }
 </style>

@@ -80,14 +80,16 @@ const clonedTweetData2 = ref([...tweetData2.value, ...tweetData2.value]);
   <div class="py-8">
     <section class="flex flex-col items-center gap-6">
       <div
-        class="flex justify-center border-2 border-black rounded-[8px] bg-[#FFF3CC] py-1 px-6 items-center gap-3"
+        class="flex justify-center border-2 border-black rounded-[8px] bg-[#FFF3CC] py-2 px-3 items-center gap-3"
       >
-        <div>
-          <img src="../Assets/dot.svg" class="w-auto" alt="" />
+        <div class=" flex items-center justify-center">
+          <!-- <img src="../Assets/dot.svg" class="w-auto" alt="" /> -->
+          <i class="fa-solid fa-circle text-[#FFB3CE] border-[4px] text-[0.5rem] border-black rounded-full "></i>
         </div>
         <h2 class="font-black text-[1.4rem]">Street Cred</h2>
       </div>
-      <button class="rounded-[8px] bg-[#1DA1F2] py-2 px-6">
+      <button class="rounded-[8px] flex items-center gap-3 bg-[#1DA1F2] py-3 px-6">
+        <i class="fa-brands fa-twitter text-white text-[1rem] "></i>
         <span class="text-base text-white font-medium">Join our community</span>
       </button>
     </section>

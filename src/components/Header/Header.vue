@@ -23,7 +23,7 @@ addIcons(MdKeyboardarrowdown);
       <section class="flex gap-2">
         <p>Company</p>
         <div class=" ">
-          <OhVueIcon name="md-keyboardarrowdown" />
+          <i class="fa-solid fa-circle-chevron-down"></i>
         </div>
       </section>
       <!-- <section >

@@ -22,7 +22,7 @@ import Footer from '../../components/Footer/Footer.vue'
     <StreetCred />
     <Stories />
 
-    <div class=" bg-black mt-32 pt-[5%] " >
+    <div class=" bg-black mt-40 pt-[5%] " >
       <FAQs />
       <PlaceOrder />
       <Footer />
