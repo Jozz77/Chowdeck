@@ -8,18 +8,18 @@ addIcons(MdKeyboardarrowdown);
 
 <template lang="">
   <header class="px-[5%] py-3 z-50 top-0 fixed w-full font-semibold text-[1rem] flex items-center justify-between">
-    <div>
+    <div class="shadow-xl rounded-full">
       <img alt="Vue logo" class="w-full" src="./Assets/Logo.svg" />
     </div>
 
-    <div class="flex gap-8 bg-white px-10 py-4 rounded-full items-center ">
-      <RouterLink to="/">Company</RouterLink>
-      <RouterLink to="/">FAQs</RouterLink>
-      <RouterLink to="/">Blog</RouterLink>
-      <RouterLink to="/">Contact</RouterLink>
+    <div class="flex gap-10 shadow-xl rounded-full bg-white px-10 py-4 items-center ">
+      <RouterLink to="/" class="hover:text-[blue]" >Company</RouterLink>
+      <RouterLink to="/" class="hover:text-[blue]">FAQs</RouterLink>
+      <RouterLink to="/" class="hover:text-[blue]">Blog</RouterLink>
+      <RouterLink to="/" class="hover:text-[blue]">Contact</RouterLink>
     </div>
 
-    <div class="flex gap-2 bg-white px-10 py-4 rounded-full">
+    <div class="flex gap-2 bg-white shadow-xl px-10 py-4 rounded-full">
       <section class="flex gap-2">
         <p>Customers</p>
         <div class=" ">

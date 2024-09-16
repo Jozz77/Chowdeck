@@ -22,13 +22,13 @@ onMounted(() => {
 )
     // Animate button 1 (slide in from bottom)
     .from(buttonRef1.value, {
-      opacity: 1,
+      opacity: 0,
       y: 100,
       duration: 0.8,
     })
     // Animate button 2 (slide in from bottom)
     .from(buttonRef2.value, {
-      opacity: 1,
+      opacity: 0,
       y: 100,
       duration: 0.8,
     }, '-=0.5') // Overlap the animation by half a second
@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="px-[5%] heroBg pt-20">
+  <div class="px-[5%] heroBg pt-20 pb-8">
     <!-- Heading to animate -->
    <h1 ref="headingRef" class="text-[7rem] text-center animated-text font-bold">
       {{ currentText }} 
@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
     </h1>
 
     <!-- Buttons to animate -->
-    <section class="flex items-center mt-12 justify-center gap-4">
+    <section class="flex items-center pt-12 justify-center gap-4">
       <button ref="buttonRef1" class="bg-[#0C513F] py-4 px-6 rounded-md flex gap-2 items-center">
         <div class=" w-[10%]">
           <img alt="Playstore logo" class="w-full" :src="imgUrl" />
