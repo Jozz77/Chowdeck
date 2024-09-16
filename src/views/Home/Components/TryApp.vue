@@ -65,7 +65,7 @@ watch(activeTab, (newTab) => {
 <template>
   <div class="mt-20 tab-section">
     <section class="flex justify-center py-3 tab-buttons">
-      <div class="bg-[#FFF3CC] p-1 text-base font-medium rounded-full">
+      <div class="bg-[#FFF3CC] overflow-hidden p-1 text-base font-medium rounded-full">
         <button
           v-for="tab in tabs"
           :key="tab.name"

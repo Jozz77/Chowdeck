@@ -11,6 +11,7 @@ import quick4 from "../Assets/quick4.svg";
 import quick5 from "../Assets/quick5.svg";
 import bottle1 from "../Assets/bottle.svg";
 
+
 const quickData = ref([
   {
     id: 1,

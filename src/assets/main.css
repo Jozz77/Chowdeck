@@ -18,3 +18,10 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.heroBg {
+  background-image: url('../views/Home/Assets/hero.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

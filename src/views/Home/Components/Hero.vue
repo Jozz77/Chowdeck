@@ -22,28 +22,29 @@ onMounted(() => {
 )
     // Animate button 1 (slide in from bottom)
     .from(buttonRef1.value, {
-      opacity: 0,
+      opacity: 1,
       y: 100,
       duration: 0.8,
     })
     // Animate button 2 (slide in from bottom)
     .from(buttonRef2.value, {
-      opacity: 0,
+      opacity: 1,
       y: 100,
       duration: 0.8,
     }, '-=0.5') // Overlap the animation by half a second
     // Animate bike (slide in from right)
     .from(bikeRef.value, {
-      opacity: 0,
+      opacity: 1,
       x: '100vw',
       duration: 3,
     });
 });
 
 const texts = [
-  'Se o ti jeun?',
   'You don chow?',
-  // "You've eaten?",
+  'Se o ti jeun?',
+  "I riela nri?",
+  "Kun ci abinci?",
   'Have you eaten?'
 ]; // Array of texts to cycle through
 
@@ -68,7 +69,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="px-[5%] mt-20">
+  <div class="px-[5%] heroBg pt-20">
     <!-- Heading to animate -->
    <h1 ref="headingRef" class="text-[7rem] text-center animated-text font-bold">
       {{ currentText }} 
