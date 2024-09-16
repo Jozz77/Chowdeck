@@ -1,54 +1,57 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { gsap } from 'gsap';
-import imgUrl from '../Assets/svg.svg';
-import Apple from '../Assets/Frame.svg';
 import Bike from '../Assets/Bike.svg';
 
 // Create refs for the DOM elements
 const headingRef = ref(null);
 const buttonRef1 = ref(null);
 const buttonRef2 = ref(null);
-const bikeRef = ref(null);
+const bikeRef = ref(null); // Original bike
+const bikeDiagonalRef = ref(null); // Diagonal bike
 
 onMounted(() => {
-  // Create a GSAP timeline
-  const tl = gsap.timeline();
+  // Create a GSAP timeline for the heading and buttons (runs first)
+  const firstTimeline = gsap.timeline();
 
   // Animate heading (fade in with GSAP)
-  tl.fromTo(headingRef.value, 
-  { opacity: 0, y: 200 },    // Starting state (invisible, moved 50px down)
-  { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" } // Slowly fades in and moves to original position
-)
+  firstTimeline.fromTo(
+    headingRef.value,
+    { opacity: 0, y: 200 },
+    { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' }
+  )
     // Animate button 1 (slide in from bottom)
-    .from(buttonRef1.value, {
-      opacity: 0,
-      y: 100,
-      duration: 0.8,
-    })
+    .from(buttonRef1.value, { opacity: 0, y: 100, duration: 0.8 })
     // Animate button 2 (slide in from bottom)
-    .from(buttonRef2.value, {
-      opacity: 0,
-      y: 100,
-      duration: 0.8,
-    }, '-=0.5') // Overlap the animation by half a second
-    // Animate bike (slide in from right)
-    .from(bikeRef.value, {
-      opacity: 1,
-      x: '100vw',
-      duration: 3,
-    });
+    .from(buttonRef2.value, { opacity: 0, y: 100, duration: 0.8 }, '-=0.5');
+
+  // Create a separate timeline for the diagonal bike and the original bike
+  const secondTimeline = gsap.timeline({ repeat: -1, delay: 1 }); // Set to repeat the bike sequence
+
+  // Animate the diagonal bike first
+  secondTimeline
+     .fromTo(
+    bikeDiagonalRef.value,
+    { x: '100vw', y: '-25vh', rotate: 345, opacity: 1 }, // Starting position from the right
+    { x: '60vw', y: '0vh', rotate: 345, duration: 1.5, ease: 'power2.inOut' } // Move downwards
+  )
+  .set(bikeDiagonalRef.value, {rotate: 0})
+  // Move horizontally across the screen
+  .to(bikeDiagonalRef.value, { x: '-100vw', y: '0vh', rotate: 0, duration: 4.5, ease: 'power2.inOut' })
+    // After the diagonal bike finishes, animate the original bike
+    .fromTo(
+      bikeRef.value,
+      { x: '-30vw', opacity: 1 },
+      { x: '100vw', opacity: 1, duration: 3.5, ease: 'power2.inOut' }
+    );
+
+  // Chain the second timeline after the first timeline completes
+  firstTimeline.add(secondTimeline, '+=0'); // 0.5 seconds delay after the first timeline
 });
 
-const texts = [
-  'You don chow?',
-  'Se o ti jeun?',
-  "I riela nri?",
-  "Kun ci abinci?",
-  'Have you eaten?'
-]; // Array of texts to cycle through
-
-const currentText = ref(texts[0]); // Start with the first text
+// Array of texts to cycle through
+const texts = ['You don chop?', 'Se o ti jeun?', 'I riela nri?', 'Kun ci abinci?', 'Have you eaten?'];
+const currentText = ref(texts[0]);
 let currentIndex = 0;
 let intervalId = null;
 
@@ -65,51 +68,53 @@ onMounted(() => {
 onBeforeUnmount(() => {
   clearInterval(intervalId); // Clean up interval when the component is unmounted
 });
-
 </script>
 
 <template>
-  <div class="px-[5%] heroBg pt-20 pb-8">
+  <div class="px-[5%] relative flex flex-col gap-8  justify-center items-center h-screen heroBg overflow-hidden  pb-4">
     <!-- Heading to animate -->
-   <h1 ref="headingRef" class="text-[7rem] text-center animated-text font-bold">
-      {{ currentText }} 
-      <!-- you -->
+    <h1 ref="headingRef" class="text-[7rem] mt-[-10%] text-center animated-text font-bold">
+      {{ currentText }}
     </h1>
 
     <!-- Buttons to animate -->
-    <section class="flex items-center pt-12 justify-center gap-4">
+    <section class="flex items-center  justify-center gap-4">
       <button ref="buttonRef1" class="bg-[#0C513F] py-4 px-6 rounded-md flex gap-2 items-center">
-        <div class=" w-[10%]">
-          <img alt="Playstore logo" class="w-full" :src="imgUrl" />
+        <div class="w-[10%]">
+          <img alt="Playstore logo" class="w-full" src="../Assets/svg.svg" />
         </div>
         <p class="text-white text-[1rem]">Download on Google Play</p>
       </button>
 
       <button ref="buttonRef2" class="bg-[#0C513F] py-4 px-6 rounded-md flex gap-2 items-center">
-       <div>
-            <i class="fa-brands fa-apple text-white text-[1.5rem]"></i>
-          </div>
+        <div>
+          <i class="fa-brands fa-apple text-white text-[1.5rem]"></i>
+        </div>
         <p class="text-white text-[1rem]">Download on the App Store</p>
       </button>
     </section>
 
-    <!-- Bike image to animate -->
-    <section class="mt-12 w-[10%]">
-      <img ref="bikeRef" alt="Bike logo" class="w-full" :src="Bike" />
+    <!-- Bike images to animate -->
+    <section class="absolute bottom-[5%] w-full flex gap-4">
+      <!-- First bike that moves diagonally and then vertically (repeats) -->
+      <div class="w-[10%]">
+        <img ref="bikeDiagonalRef" alt="Diagonal Bike logo" class="w-full" :src="Bike" />
+      </div>
+
+      <!-- Original bike that moves from the right (runs once) -->
+      <div class="w-[10%]">
+        <img ref="bikeRef" alt="Bike logo" class=" scale-x-[-1] w-full" :src="Bike" />
+      </div>
     </section>
   </div>
 </template>
 
 <style scoped>
-.bg-Primary {
-  background-color: #FFC501;
+.heroBg {
+  background-color: #f4f4f4;
 }
 .animated-text {
   position: relative;
-  transition: transform 0.7s ease, opacity 0.7s ease;
-}
-
-h1 {
   transition: transform 0.7s ease, opacity 0.7s ease;
 }
 
