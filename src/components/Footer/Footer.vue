@@ -1,5 +1,31 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  gsap.fromTo(
+      ".footer-section", // Target the section you want to animate
+      { opacity: 0, y: 200 }, // Initial state
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".footer-section", // Element that triggers the animation
+          start: "top 80%", // When the top of the section is 80% from the top of the viewport
+          end: "bottom top", // End when the bottom of the section hits the top of the viewport
+          // toggleActions: "play none none reverse",
+          once: true,
+        },
+      }
+    );
+})
 
 const companyLinks = ref([
   { name: "Customer", link: "" },
@@ -45,15 +71,15 @@ const poplularLinks = ref([
 </script>
 
 <template>
-  <div class="pt-10 px-[5%]">
+  <div class="pt-10 footer-section px-[5%]">
     <section>
-      <div class="border-b-[1px] mt-8 relative border-[#ffffff37] py-8">
+      <div class="border-b-[1px] mt-8 relative border-[#ffffff37] py-6 lg:py-8">
         <section class="flex items-end gap-4">
           <div class="flex gap-3 items-center">
             <div>
               <img src="./Assets/star.svg" alt="Star" />
             </div>
-            <h3 class="leading-none text-white font-black text-[2.2rem]">
+            <h3 class="leading-none text-white font-black text-[1.8rem] lg:text-[2.2rem]">
               Cool stuff only
             </h3>
           </div>
@@ -84,7 +110,7 @@ const poplularLinks = ref([
         </div>
         
       </div>
-      <div class="border-l-[1px] border-b-[1px] row-span-4 col-span-2 py-6 border-[#ffffff37]">
+      <div class="border-l-[1px] border-b-[1px] row-span-4 col-span-2 py-4 lg:py-6 border-[#ffffff37]">
           <img src="./Assets/star.svg" class="mx-auto" alt="Star" />
         </div>
 
@@ -92,11 +118,11 @@ const poplularLinks = ref([
         class="col-start-1 border-r-[1px] flex flex-col justify-between row-span-3 border-[#ffffff37] py-10 col-end-4"
       >
         <div>
-          <img src="./Assets/svg.svg" class="" alt="svg" />
+          <img src="./Assets/svg.svg" class="w-[50%] lg:w-auto" alt="svg" />
         </div>
 
         <div>
-          <img src="./Assets/downLogo.svg" alt="Star" />
+          <img src="./Assets/downLogo.svg" class=" w-[70%] lg:w-auto" alt="Star" />
         </div>
       </div>
 
@@ -195,7 +221,7 @@ const poplularLinks = ref([
       </div>
     </section>
 
-    <section class="text-center py-8">
+    <section class="text-center py-6 lg:py-8">
       <small class="text-[#ffffff58] text-[0.8rem] text-center"
         >© All Rights Reserved. 2024, Chowdeck Logistics Inc.
       </small>

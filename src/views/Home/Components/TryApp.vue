@@ -2,10 +2,13 @@
 import { ref, onMounted, watch } from "vue";
 import { gsap } from "gsap";
 import Phone from "../Assets/phone.png";
+import CustomerImg from "../Assets/roll.svg";
+import VendorImg from "../Assets/vendor.png";
+import CustomerRiderImg from "../Assets/rider.png";
 
 // Define tab content components
 const tabs = ref([
-  { name: "Customer" },
+  { name: "Customer"},
   { name: "Vendors" },
   { name: "Riders" },
 ]);
@@ -63,7 +66,7 @@ watch(activeTab, (newTab) => {
 </script>
 
 <template>
-  <div class="mt-20 tab-section">
+  <div class="mt-12 lg:mt-20 tab-section">
     <section class="flex justify-center py-3 tab-buttons">
       <div class="bg-[#FFF3CC] overflow-hidden p-1 text-base font-medium rounded-full">
         <button
@@ -79,19 +82,19 @@ watch(activeTab, (newTab) => {
     </section>
 
     <!-- Display Tab Content -->
-    <section class="mt-8 px-[5%]">
+    <section class="mt-4 lg:mt-8 px-[5%]">
       <transition name="fade">
         <div key="tab-content">
           <div v-if="activeTab.name === 'Customer'" class="text-center">
             <section class=" flex flex-col gap-4">
               <h2 class="text-[3.5rem] font-black customer-heading">Try the App</h2>
-              <p class="px-[25%] tracking-wider text-[1.1rem] customer-text">
+              <p class="px-[15%] lg:px-[25%] tracking-wider text-[1.1rem] customer-text">
                 Have meals delivered to you within minutes from a wide variety of restaurants ranging from African to
                 Continental cuisines to satisfy your cravings.
               </p>
             </section>
 
-            <section class="relative mx-auto w-[30%] mt-20 ">
+            <section class="relative mx-auto w-[30%] mt-12 lg:mt-20 ">
               <img :src="Phone" class="w-full phone-img" alt="phone" />
 
               <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
@@ -108,8 +111,8 @@ watch(activeTab, (newTab) => {
               </p>
             </section>
 
-            <section class="relative mx-auto w-[30%] mt-20 ">
-              <img :src="Phone" class="w-full phone-img" alt="phone" />
+            <section class="relative mx-auto w-[30%] mt-12 lg:mt-20 ">
+              <img :src="VendorImg" class="w-full phone-img" alt="phone" />
 
               <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
                 <img src="../Assets/roll.svg" class="w-full " alt="roll" />
@@ -125,8 +128,8 @@ watch(activeTab, (newTab) => {
               </p>
             </section>
 
-            <section class="relative mx-auto w-[30%] mt-20 ">
-              <img :src="Phone" class="w-full phone-img" alt="phone" />
+            <section class="relative mx-auto w-[30%] mt-12 lg:mt-20 ">
+              <img :src="CustomerRiderImg" class="w-full phone-img" alt="phone" />
 
               <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
                 <img src="../Assets/roll.svg" class="w-full " alt="roll" />

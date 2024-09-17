@@ -1,5 +1,48 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+    gsap.fromTo(
+      ".faq-container", // Target the section you want to animate
+      { opacity: 0, x: 200 }, // Initial state
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".faq-container", // Element that triggers the animation
+          start: "top 20%", // When the top of the section is 20% from the top of the viewport
+          end: "bottom top", // End when the bottom of the section hits the top of the viewport
+          // toggleActions: "play none none reverse",
+          once: true,
+        },
+      }
+    );
+
+  gsap.fromTo(
+    ".explore-item", // Target each item in the section
+    { opacity: 0, y: 200 }, // Initial state
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      ease: "power3.out",
+      stagger: 0.3, // Stagger the animation by 0.3 seconds
+      scrollTrigger: {
+        trigger: ".explore-item", // Element that triggers the animation
+        start: "top 20%", // When the top of the section is 20% from the top of the viewport
+        end: "bottom top", // End when the bottom of the section hits the top of the viewport
+        // toggleActions: "play none none reverse",
+        once: true,
+      },
+    }
+  );
+})
 
 // List of FAQs
 const faqs = ref([
@@ -59,7 +102,7 @@ const selectQuestion = (index) => {
 
 <template>
   <div
-    class="faq-container bg-white mt-[-13%] border-2 rounded-[24px] mx-[5%] py-8 px-[3%] border-black "
+    class="faq-container overflow-hidden bg-white mt-[-13%] border-2 rounded-[24px] mx-[5%] py-8 px-[3%] border-black "
   >
   <div class=" flex justify-between gap-[3%]">
     <h2 class="font-black w-[50%] text-Green text-[2.7rem]">FAQs.</h2>
@@ -74,11 +117,11 @@ const selectQuestion = (index) => {
           v-for="(faq, index) in faqs"
           :key="faq.id"
           :class="{
-            ' bg-black rounded-[8px] text-white': index === selectedQuestion,
+            ' bg-black rounded-[8px]  text-white': index === selectedQuestion,
             'text-Primary': index !== selectedQuestion,
           }"
           @click="selectQuestion(index)"
-          class="cursor-pointer px-[5%] py-4 flex items-center justify-between border-[1px] rounded-[8px]  border-gray-300  transition-colors duration-300 ease-in-out"
+          class="cursor-pointer explore-item px-[5%] py-4 flex items-center justify-between border-[1px] rounded-[8px]  border-gray-300  transition-colors duration-300 ease-in-out"
         >
          <p :class="{
             '  text-white': index === selectedQuestion,
@@ -128,5 +171,8 @@ const selectQuestion = (index) => {
   color: #1da1f2;
   border-left: 4px solid #1da1f2;
   background-color: #f0f8ff;
+}
+.explore-item {
+  opacity: 0;
 }
 </style>

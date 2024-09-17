@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import explore1 from "../Assets/explore1.png";
 import explore2 from "../Assets/explore2.png";
 import explore3 from "../Assets/explore3.png";
@@ -10,6 +10,31 @@ import quick3 from "../Assets/quick3.svg";
 import quick4 from "../Assets/quick4.svg";
 import quick5 from "../Assets/quick5.svg";
 import bottle1 from "../Assets/bottle.svg";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => (
+   gsap.fromTo(
+    ".explore-section", // Target the section you want to animate
+    { opacity: 0, y: 50 }, // Initial state
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".explore-section", // Element that triggers the animation
+        start: "top 80%", // When the top of the section is 80% from the top of the viewport
+        end: "bottom top", // End when the bottom of the section hits the top of the viewport
+        // toggleActions: "play none none reverse",
+        once: true,
+      },
+    }
+  )
+))
 
 
 const quickData = ref([
@@ -101,11 +126,11 @@ const goToSlide = (index) => {
 </script>
 
 <template>
-  <div class="bg-Primary mt-40 pt-[5%] pb-32">
+  <div class="bg-Primary explore-section mt-28 lg:mt-40 pt-[5%] pb-24 lg:pb-32">
     <section
       class="mt-[-15%] bg-Secondary mx-[5%] rounded-[16px] py-6 px-[3%] relative"
     >
-      <h2 class="text-[3.2rem] font-black text-center">Explore categories</h2>
+      <h2 class="text-[2.7rem] lg:text-[3.2rem] font-black text-center">Explore categories</h2>
 
       <!-- Slider -->
       <div class="flex justify-center mt-8 relative">
@@ -170,7 +195,7 @@ const goToSlide = (index) => {
 
     <section class="flex mt-10 justify-between px-[5%] items-center">
       <div class="w-[40%] relative">
-        <h3 class="text-[2.7rem] leading-[130%] text-white font-black">
+        <h3 class="text-[2.3rem] lg:text-[2.7rem] leading-[130%] text-white font-black">
           Chowdeck has <br />
           you covered
         </h3>
@@ -178,8 +203,8 @@ const goToSlide = (index) => {
           <img src="../Assets/plates.svg" class="w-full" alt="plates" />
         </div>
       </div>
-      <div class="w-[40%]">
-        <p class="text-[1.1rem] text-white">
+      <div class="w-[45%] lg:w-[40%]">
+        <p class="text-[1rem] lg:text-[1.1rem] text-white">
           Hungry? Too tired to cook? Have friends over, or do you simply need to
           chop life? Download Chowdeck, and let’s deliver happiness to your
           doorstep in minutes.

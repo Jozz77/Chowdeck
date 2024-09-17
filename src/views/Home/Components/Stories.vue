@@ -70,7 +70,6 @@ onMounted(() => {
         trigger: ".story-section", // Element that triggers the animation
         start: "top 80%", // When the top of the section is 80% from the top of the viewport
         end: "bottom top", // End when the bottom of the section hits the top of the viewport
-        // toggleActions: "play none none reverse",
         once: true,
       },
     }
@@ -81,8 +80,8 @@ onMounted(() => {
 <template>
   <div class="px-[5%] py-8 overflow-hidden">
     <section class="story-section text-[#D1D5DB] flex gap-3 items-center">
-      <h2 class="font-black text-[3.2rem]">Stories</h2>
-      <div class="">
+      <h2 class="font-black text-[2.7rem] lg:text-[3.2rem]">Stories</h2>
+      <div class="w-[15%] lg:w-auto">
         <img src="../Assets/Pasta.svg" class="w-full" alt="" />
       </div>
     </section>
@@ -91,20 +90,20 @@ onMounted(() => {
       <div
         v-for="join in joinData"
         :key="join.id"
-        class="story-item w-[31%] border-2 rounded-[16px] overflow-hidden border-black"
+        class="story-item w-[32%] lg:w-[31%] border-2 rounded-[16px] overflow-hidden border-black"
       >
         <section class="relative mt-[-0.2rem]">
           <img :src="join.image" class="w-full" alt="" />
         </section>
-        <section class="py-6 flex flex-col gap-3 px-[5%]">
-          <h3 class="font-black text-center uppercase text-[0.8rem]">
+        <section class="py-4 lg:py-6 flex flex-col gap-3 px-[5%]">
+          <h3 class="font-black h-8 text-center uppercase text-[0.8rem]">
             {{ join.title }}
           </h3>
-          <p class="text-[0.95rem] xxl:text-[1rem] text-center font-medium ">
+          <p class="text-[0.8rem] h-20 lg:h-auto lg:text-[0.95rem] xxl:text-[1rem] text-center font-medium ">
             {{ join.text }}
           </p>
           <button
-            class=" bg-[#0c513f16] rounded-[8px] mt-4 py-3 text-[#0C513F] text-[0.9rem] font-medium"
+            class=" bg-[#0c513f16] rounded-[8px] mt-2 lg:mt-4 py-3 text-[#0C513F] text-[0.9rem] font-medium"
           >
             Read More
           </button>
