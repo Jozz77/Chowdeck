@@ -2,6 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { gsap } from "gsap";
 import Bike from "../Assets/Bike.svg";
+import Bike2 from "../Assets/Bike2.svg";
 
 // Create refs for the DOM elements
 const headingRef = ref(null);
@@ -144,7 +145,7 @@ onBeforeUnmount(() => {
           ref="bikeRef"
           alt="Bike logo"
           class="scale-x-[-1] w-full"
-          :src="Bike"
+          :src="Bike2 "
         />
       </div>
       <!-- Original bike that moves from the left (runs once) -->

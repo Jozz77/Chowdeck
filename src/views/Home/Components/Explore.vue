@@ -10,6 +10,8 @@ import quick3 from "../Assets/quick3.svg";
 import quick4 from "../Assets/quick4.svg";
 import quick5 from "../Assets/quick5.svg";
 import bottle1 from "../Assets/bottle.svg";
+import bottle2 from "../Assets/bottle2.svg";
+import bottle3 from "../Assets/bottle3.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -95,8 +97,8 @@ const clonedExploreData = ref([...exploreImages.value, ...exploreImages.value]);
 // Sample slide data (you can replace with actual images)
 const slides = ref([
   { id: 1, image: bottle1 },
-  { id: 2, image: bottle1 },
-  { id: 3, image: bottle1 },
+  { id: 2, image: bottle2 },
+  { id: 3, image: bottle3 },
 ]);
 
 const activeSlide = ref(0);
@@ -161,7 +163,7 @@ const goToSlide = (index) => {
               'cursor-pointer h-12 w-12 flex items-center border-2 border-black justify-center rounded-full text-[1rem] font-medium',
               index === activeSlide
                 ? 'bg-transparent text-black'
-                : 'bg-black text-Secondary',
+                : 'bg-black hover:bg-[#000000be] text-Secondary',
             ]"
           >
             0{{ index + 1 }}
@@ -179,13 +181,13 @@ const goToSlide = (index) => {
         <div class="flex gap-2 items-center mt-4">
           <button
             @click="prevSlide"
-            class="border-2 bg-black hover:bg-[#000000d3] hover:border-[#000000d3] rounded-full h-12 w-12 flex justify-center items-center border-black"
+            class="border-2 bg-black hover:bg-[#000000be] hover:border-[#000000be] rounded-full h-12 w-12 flex justify-center items-center border-black"
           >
             <i class="fa-solid fa-arrow-left text-[1.5rem] text-Secondary"></i>
           </button>
           <button
             @click="nextSlide"
-            class="border-2 bg-black hover:bg-[#000000d3] hover:border-[#000000d3] rounded-full h-12 w-12 flex justify-center items-center border-black"
+            class="border-2 bg-black hover:bg-[#000000be] hover:border-[#000000be] rounded-full h-12 w-12 flex justify-center items-center border-black"
           >
             <i class="fa-solid fa-arrow-right text-[1.5rem] text-Secondary"></i>
           </button>
