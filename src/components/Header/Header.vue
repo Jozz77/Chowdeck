@@ -8,7 +8,7 @@ addIcons(MdKeyboardarrowdown);
 
 <template lang="">
   <header class="px-[5%] py-3 z-50 top-0 fixed w-full font-semibold text-[1rem] flex items-center justify-between">
-    <div class="shadow-xl w-[23%] md:w-[18%] bg-Primary px-6 lg:px-10 py-4  rounded-full">
+    <div class="shadow-xl w-[25%] md:w-[17%] bg-Primary px-6 lg:px-10 py-4  rounded-full">
       <img alt="Vue logo" class="w-full" src="./Assets/downLogo.svg" />
     </div>
 

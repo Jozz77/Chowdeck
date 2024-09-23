@@ -30,12 +30,12 @@ onMounted(() => {
     {
       opacity: 1,
       y: 0,
-      duration: 1.5,
+      duration: 1,
       ease: "power3.out",
       stagger: 0.3, // Stagger the animation by 0.3 seconds
       scrollTrigger: {
         trigger: ".explore-item", // Element that triggers the animation
-        start: "top 20%", // When the top of the section is 20% from the top of the viewport
+        start: "top 80%", // When the top of the section is 20% from the top of the viewport
         end: "bottom top", // End when the bottom of the section hits the top of the viewport
         // toggleActions: "play none none reverse",
         once: true,

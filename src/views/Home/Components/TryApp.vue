@@ -24,7 +24,7 @@ function selectTab(tab) {
 // GSAP animations
 function animateContent() {
   const tl = gsap.timeline();
-  tl.from(".tab-buttons button", { opacity: 0, y: 50, stagger: 0.2, duration: 1, ease: "power4.out" })
+  tl.from(".tab-sections", { opacity: 0, y: 50, stagger: 0.2, duration: 1, ease: "power4.out" })
     .from(".customer-heading", { opacity: 0, y: 50, duration: 1, ease: "power4.out" }, "-=0.8")
     .from(".customer-text", { opacity: 0, y: 30, duration: 1, ease: "power4.out" }, "-=0.5")
     .from(".phone-img", { opacity: 0, x: 100, duration: 1, ease: "power4.out" }, "-=0.5")

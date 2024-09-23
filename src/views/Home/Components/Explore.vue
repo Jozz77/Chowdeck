@@ -132,7 +132,7 @@ const goToSlide = (index) => {
     <section
       class="mt-[-15%] bg-Secondary mx-[5%] rounded-[16px] py-6 px-[3%] relative"
     >
-      <h2 class="text-[2.7rem] lg:text-[3.2rem] font-black text-center">Explore categories</h2>
+      <h2 class="text-[2.4rem] md:text-[2.7rem] lg:text-[3.2rem] font-black text-center">Explore categories</h2>
 
       <!-- Slider -->
       <div class="flex justify-center mt-8 relative">
@@ -145,7 +145,7 @@ const goToSlide = (index) => {
         </div>
       </div>
 
-      <div class="flex justify-between">
+      <div class="flex justify-between mt-4 md:mt-0">
         <!-- Pagination (Numbered) -->
         <div class="flex justify-center mt-4 space-x-2">
           <div
@@ -178,7 +178,7 @@ const goToSlide = (index) => {
         </div>
 
         <!-- Previous & Next Buttons -->
-        <div class="flex gap-2 items-center mt-4">
+        <div class="hidden md:flex gap-2 items-center mt-4">
           <button
             @click="prevSlide"
             class="border-2 bg-black hover:bg-[#000000be] hover:border-[#000000be] rounded-full h-12 w-12 flex justify-center items-center border-black"
@@ -195,18 +195,18 @@ const goToSlide = (index) => {
       </div>
     </section>
 
-    <section class="flex mt-10 justify-between px-[5%] items-center">
-      <div class="w-[40%] relative">
-        <h3 class="text-[2.3rem] lg:text-[2.7rem] leading-[130%] text-white font-black">
+    <section class="flex flex-col md:flex-row gap-10 md:gap-0 mt-10 justify-between px-[5%] items-center">
+      <div class="w-full md:w-[40%] relative">
+        <h3 class="text-[2.7rem] md:text-[2.3rem] lg:text-[2.7rem] leading-[130%] text-white font-black">
           Chowdeck has <br />
           you covered
         </h3>
-        <div class="w-[30%] absolute bottom-[-10%] right-[10%] mt-8 mx-auto">
+        <div class="w-[20%] md:w-[30%] absolute bottom-[-5%] md:bottom-[-10%] right-[30%] md:right-[10%] mt-8 mx-auto">
           <img src="../Assets/plates.svg" class="w-full" alt="plates" />
         </div>
       </div>
-      <div class="w-[45%] lg:w-[40%]">
-        <p class="text-[1rem] lg:text-[1.1rem] text-white">
+      <div class="w-full md:w-[45%] lg:w-[40%]">
+        <p class="text-[1.1rem] md:text-[1rem] lg:text-[1.1rem] text-white">
           Hungry? Too tired to cook? Have friends over, or do you simply need to
           chop life? Download Chowdeck, and let’s deliver happiness to your
           doorstep in minutes.

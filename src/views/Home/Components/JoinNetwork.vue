@@ -84,30 +84,28 @@ onMounted(() => {
 <template>
   <div class="px-[5%] py-8 overflow-hidden">
     <section
-      class="join-section text-[#D1D5DB] mt-12 lg:mt-16 flex gap-2 items-center justify-center"
+      class="join-section text-[#D1D5DB] mt-12 lg:mt-16 flex gap-3 items-center justify-center"
     >
-      <h2 class="text-[#D1D5DB] text-[3rem] lg:text-[3.5rem]">Join our growing network</h2>
-      <div class="text-[#D1D5DB]">
-        <OhVueIcon name="pr-arrow-down" class="text-[2rem]" />
-      </div>
+      <h2 class="text-[#D1D5DB] text-[2.5rem] md:text-[3rem] lg:text-[3.5rem]">Join our growing network</h2>
+        <i class="fa-solid fa-arrow-down text-[#D1D5DB] leading-none text-[2.5rem]"></i>
     </section>
 
-    <section class="join-section flex justify-between mt-8">
+    <section class="join-section flex flex-col gap-6 md:gap-0 md:flex-row justify-between mt-12">
       <div
         v-for="join in joinData"
         :key="join.id"
-        class="join-item w-[32%] lg:w-[30%] border-2 overflow-hidden rounded-[16px] border-black"
+        class="join-item w-full  md:w-[32%] lg:w-[30%] border-2 overflow-hidden rounded-[16px] border-black"
       >
-        <section class="py-4 lg:py-6 flex flex-col gap-1 lg:gap-3 px-[5%]">
-          <div class="w-[8%] h-5 ">
+        <section class="py-4 lg:py-6 flex flex-col gap-3 md:gap-1 lg:gap-3 px-[5%]">
+          <div class="w-[8%] h-5 mb-5 md:mb-0 ">
             <img :src="join.icon" class=" w-full" alt="" />
           </div>
-          <h3 class="font-black text-[1.1rem] lg:text-[1.3rem]">{{join.title}}</h3>
-          <p class="text-[0.85rem] lg:text-[0.95rem]">
+          <h3 class="font-black  md:text-[1.2rem]text-[1.1rem] lg:text-[1.3rem]">{{join.title}}</h3>
+          <p class="text-[0.95rem] md:text-[0.85rem] lg:text-[0.95rem]">
             {{join.text}}
           </p>
           <button
-            class="hover:[blue] tracking-[3px] uppercase text-left text-[0.8rem] lg:text-[0.9rem] font-black"
+            class="hover:[blue] tracking-[3px] uppercase text-left text-[0.9rem] md:text-[0.8rem] lg:text-[0.9rem] font-black"
           >
             see more
           </button>

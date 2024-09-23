@@ -11,6 +11,7 @@ const buttonRef2 = ref(null);
 const bikeRef = ref(null); // Original bike
 const bikeRefRight = ref(null); // Original bike
 const bikeDiagonalRef = ref(null); // Diagonal bike
+const newBikeRef = ref(null);
 
 onMounted(() => {
   // Create a GSAP timeline for the heading and buttons (runs first)
@@ -20,7 +21,7 @@ onMounted(() => {
   firstTimeline
     .fromTo(
       headingRef.value,
-      { opacity: 0, y: -500 },
+      { opacity: 0, y: -3000 },
       { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
     )
     // Animate button 1 (slide in from bottom)
@@ -29,16 +30,25 @@ onMounted(() => {
     .from(buttonRef2.value, { opacity: 0, y: 100, duration: 0.8 }, "-=0.5");
 
   // Create a separate timeline for the diagonal bike and the original bike
-  const secondTimeline = gsap.timeline({ repeat: -1, repeatDelay: -0.5, delay: -1 }); // Set to repeat the bike sequence
+  const secondTimeline = gsap.timeline({
+    repeat: -1,
+    repeatDelay: -0.5,
+    delay: -1,
+  }); // Set to repeat the bike sequence
 
   // Animate the diagonal bike first
   secondTimeline
     .fromTo(
       bikeDiagonalRef.value,
-      { x: "100vw", y: "-25vh", rotate: 345, opacity: 1 }, // Starting position from the right
+      {
+        x: "100vw",
+        y: () => (window.innerWidth < 768 ? "-17vh" : "-23vh"),
+        rotate: 345,
+        opacity: 1,
+      }, // Starting position from the right
       { x: "60vw", y: "0vh", rotate: 345, duration: 2, ease: "power2.inOut" } // Move downwards
     )
-    .set(bikeDiagonalRef.value, { rotate: 0 }, )
+    .set(bikeDiagonalRef.value, { rotate: 0 })
     // Move horizontally across the screen
     .to(bikeDiagonalRef.value, {
       x: "-100vw",
@@ -59,6 +69,13 @@ onMounted(() => {
       { x: "100vw", opacity: 1 },
       { x: "-70vw", opacity: 1, duration: 4.5, ease: "power2.inOut" },
       "-=3.5" // Start bikeRef 2.5 seconds before bikeDiagonalRef finishes
+    )
+    // Add the new bike that moves in the opposite direction
+    .fromTo(
+      newBikeRef.value, // Ref for the new bike
+      { x: "-100vw", y: "0vh", rotate: 15, opacity: 1 }, // Starting from the left
+      { x: "60vw", y: "-25vh", rotate: 0, duration: 3.5, ease: "power2.inOut" }, // Move diagonally to the right and upwards
+      "-=3" // Start this bike 3 seconds before the others finish
     );
 
   // Chain the second timeline after the first timeline completes
@@ -94,21 +111,23 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="px-[5%] relative flex flex-col gap-8 justify-center items-center h-screen heroBg overflow-hidden pb-4"
+    class="px-[5%] relative flex flex-col gap-10 lg:gap-6 justify-center items-center h-[80vh] md:h-screen heroBg overflow-hidden pb-4"
   >
     <!-- Heading to animate -->
     <h1
       ref="headingRef"
-      class="text-[5rem] lg:text-[6.5rem] xl:text-[7rem] mt-[-20%] lg:mt-[-15%] xl:mt-[-10%] xxl:mt-[-13%] overflow-hidden text-center animated-text font-bold"
+      class="text-[4.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7rem] mt-[-5%] md:mt-[-20%] lg:mt-[-12%] xl:mt-[-5%] xxl:mt-[-10%] overflow-hidden text-center animated-text font-bold"
     >
       {{ currentText }}
     </h1>
 
     <!-- Buttons to animate -->
-    <section class="flex items-center justify-center gap-4">
+    <section
+      class="flex flex-col md:flex-row items-center justify-center gap-4"
+    >
       <button
         ref="buttonRef1"
-        class="bg-[#0C513F] py-4 px-6 rounded-md flex gap-2 items-center"
+        class="bg-[#0C513F] py-4 px-8 md:px-6 rounded-md flex gap-2 items-center"
       >
         <div class="w-[10%]">
           <img alt="Playstore logo" class="w-full" src="../Assets/svg.svg" />
@@ -118,7 +137,7 @@ onBeforeUnmount(() => {
 
       <button
         ref="buttonRef2"
-        class="bg-[#0C513F] py-4 px-6 rounded-md flex gap-2 items-center"
+        class="bg-[#0C513F] py-4 px-8 md:px-6 rounded-md flex gap-2 items-center"
       >
         <div>
           <i class="fa-brands fa-apple text-white text-[1.5rem]"></i>
@@ -128,7 +147,7 @@ onBeforeUnmount(() => {
     </section>
 
     <!-- Bike images to animate -->
-    <section class="absolute bottom-[5%] w-full flex gap-4">
+    <section class="absolute bottom-[7%] md:bottom-[7%] w-full flex gap-4">
       <!-- First bike that moves diagonally and then vertically (repeats) -->
       <div class="w-[10%]">
         <img
@@ -139,16 +158,17 @@ onBeforeUnmount(() => {
         />
       </div>
 
-      <!-- Original bike that moves from the right (runs once) -->
+      <!-- Original bike that moves from the left (runs once) -->
       <div class="w-[10%]">
         <img
           ref="bikeRef"
           alt="Bike logo"
           class="scale-x-[-1] w-full"
-          :src="Bike2 "
+          :src="Bike2"
         />
       </div>
-      <!-- Original bike that moves from the left (runs once) -->
+
+      <!-- Original bike that moves from the right (runs once) -->
       <div class="w-[10%]">
         <img ref="bikeRefRight" alt="Bike logo" class="w-full" :src="Bike" />
       </div>
