@@ -86,7 +86,7 @@ onMounted(() => {
     <section
       class="join-section text-[#D1D5DB] mt-12 lg:mt-16 flex gap-3 items-center justify-center"
     >
-      <h2 class="text-[#D1D5DB] text-[2.5rem] md:text-[3rem] lg:text-[3.5rem]">Join our growing network</h2>
+      <h2 class="text-[#D1D5DB] text-[2.2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem]">Join our growing network</h2>
         <i class="fa-solid fa-arrow-down text-[#D1D5DB] leading-none text-[2.5rem]"></i>
     </section>
 
@@ -97,7 +97,7 @@ onMounted(() => {
         class="join-item w-full  md:w-[32%] lg:w-[30%] border-2 overflow-hidden rounded-[16px] border-black"
       >
         <section class="py-4 lg:py-6 flex flex-col gap-3 md:gap-1 lg:gap-3 px-[5%]">
-          <div class="w-[8%] h-5 mb-5 md:mb-0 ">
+          <div class="w-[8%] h-5 mb-3 sm:mb-5 md:mb-0 ">
             <img :src="join.icon" class=" w-full" alt="" />
           </div>
           <h3 class="font-black  md:text-[1.2rem]text-[1.1rem] lg:text-[1.3rem]">{{join.title}}</h3>

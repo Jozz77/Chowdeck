@@ -96,14 +96,14 @@ onMounted(() => {
           <img :src="join.image" class="w-full" alt="" />
         </section>
         <section class="py-4 lg:py-6 flex flex-col gap-4 md:gap-3 px-[5%]">
-          <h3 class="font-black h-5 md:h-8 text-center uppercase text-[1rem] md:text-[0.8rem]">
+          <h3 class="font-black h-5 md:h-8 text-center uppercase text-[0.9rem] ssm:text-[1rem] md:text-[0.8rem]">
             {{ join.title }}
           </h3>
-          <p class="text-[1rem] md:text-[0.8rem] h-16 md:h-20 lg:h-auto lg:text-[0.95rem] xxl:text-[1rem] text-center font-medium ">
+          <p class="text-[0.9rem] ssm:text-[1rem] md:text-[0.8rem] h-16 md:h-20 lg:h-auto lg:text-[0.95rem] xxl:text-[1rem] text-center font-medium ">
             {{ join.text }}
           </p>
           <button
-            class=" bg-[#0c513f16] rounded-[8px] mt-2 lg:mt-4 py-3 text-[#0C513F] text-[1rem] md:text-[0.9rem] font-medium"
+            class=" bg-[#0c513f16] rounded-[8px] mt-2 lg:mt-4 py-3 text-[#0C513F] text-[0.9rem] ssm:text-[1rem] md:text-[0.9rem] font-medium"
           >
             Read More
           </button>

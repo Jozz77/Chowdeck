@@ -132,11 +132,11 @@ const goToSlide = (index) => {
     <section
       class="mt-[-15%] bg-Secondary mx-[5%] rounded-[16px] py-6 px-[3%] relative"
     >
-      <h2 class="text-[2.4rem] md:text-[2.7rem] lg:text-[3.2rem] font-black text-center">Explore categories</h2>
+      <h2 class="text-[1.8rem] sm:text-[2.4rem] md:text-[2.7rem] lg:text-[3.2rem] font-black text-center">Explore categories</h2>
 
       <!-- Slider -->
       <div class="flex justify-center mt-8 relative">
-        <div class="w-[15%]">
+        <div class="w-[20%] md:w-[15%]">
           <img
             :src="slides[activeSlide].image"
             class="w-full"
@@ -149,7 +149,7 @@ const goToSlide = (index) => {
         <!-- Pagination (Numbered) -->
         <div class="flex justify-center mt-4 space-x-2">
           <div
-            class="border-2 bg-black rounded-full h-12 w-12 flex justify-center items-center border-black"
+            class="border-2 bg-black rounded-full h-10 sm:h-12 w-10 sm:w-12 flex justify-center items-center border-black"
           >
             <i
               class="fa-solid fa-location-dot text-[1.5rem] text-Secondary"
@@ -160,7 +160,7 @@ const goToSlide = (index) => {
             :key="slide.id"
             @click="goToSlide(index)"
             :class="[
-              'cursor-pointer h-12 w-12 flex items-center border-2 border-black justify-center rounded-full text-[1rem] font-medium',
+              'cursor-pointer h-10 sm:h-12 w-10 sm:w-12 flex items-center border-2 border-black justify-center rounded-full text-[1rem] font-medium',
               index === activeSlide
                 ? 'bg-transparent text-black'
                 : 'bg-black hover:bg-[#000000be] text-Secondary',
@@ -169,7 +169,7 @@ const goToSlide = (index) => {
             0{{ index + 1 }}
           </span>
           <div
-            class="border-2 bg-black rounded-full h-12 w-12 flex justify-center items-center border-black"
+            class="border-2 bg-black rounded-full  h-10 sm:h-12 w-10 sm:w-12 flex justify-center items-center border-black"
           >
             <div class="w-[70%]">
               <img src="../Assets/diamond.svg" class="w-full" alt="" />
@@ -195,13 +195,13 @@ const goToSlide = (index) => {
       </div>
     </section>
 
-    <section class="flex flex-col md:flex-row gap-10 md:gap-0 mt-10 justify-between px-[5%] items-center">
-      <div class="w-full md:w-[40%] relative">
-        <h3 class="text-[2.7rem] md:text-[2.3rem] lg:text-[2.7rem] leading-[130%] text-white font-black">
+    <section class="flex flex-col md:flex-row gap-10 md:gap-0 items-start mt-10 justify-between px-[5%] md:items-center">
+      <div class="w-[80%] md:w-[40%] relative">
+        <h3 class="text-[2rem] sm:text-[2.7rem] md:text-[2.3rem] lg:text-[2.7rem] leading-[130%] text-white font-black">
           Chowdeck has <br />
           you covered
         </h3>
-        <div class="w-[20%] md:w-[30%] absolute bottom-[-5%] md:bottom-[-10%] right-[30%] md:right-[10%] mt-8 mx-auto">
+        <div class="w-[25%] sm:w-[25%] md:w-[30%] absolute bottom-[-5%] md:bottom-[-10%] right-[3%] sm:right-[20%] md:right-[10%] mt-8 mx-auto">
           <img src="../Assets/plates.svg" class="w-full" alt="plates" />
         </div>
       </div>
@@ -276,5 +276,16 @@ button {
   100% {
     transform: translateX(-100%);
   }
+}
+
+@media screen and (max-width: 639px) {
+  .scroll-content {
+  display: flex;
+  gap: 1rem;
+  animation: scroll 8s linear infinite;
+}
+.scroll-content > div {
+  flex: 0 0 50%;
+}
 }
 </style>

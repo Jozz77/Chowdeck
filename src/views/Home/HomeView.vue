@@ -9,6 +9,7 @@ import Stories from './Components/Stories.vue'
 import FAQs from './Components/FAQs.vue'
 import PlaceOrder from './Components/PlaceOrder.vue'
 import Footer from '../../components/Footer/Footer.vue'
+import FooterMobile from '../../components/Footer/FooterMobile.vue'
 
 </script>
 
@@ -25,7 +26,12 @@ import Footer from '../../components/Footer/Footer.vue'
     <div class=" bg-black mt-24 lg:mt-40 pt-[5%] " >
       <FAQs />
       <PlaceOrder />
-      <Footer />
+      <div class="hidden md:block">
+        <Footer />
+      </div>
+      <div class="block md:hidden">
+        <FooterMobile />
+      </div>
     </div>
   </main>
 </template>

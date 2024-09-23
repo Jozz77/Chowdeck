@@ -77,7 +77,7 @@ const clonedTweetData2 = ref([...tweetData2.value, ...tweetData2.value]);
 </script>
 
 <template>
-  <div class="pt-24 lg:pt-32 pb-8 whiteBg relative mt-[-5%] ">
+  <div class="pt-16 sm:pt-24 lg:pt-32 pb-8 whiteBg relative mt-[-5%] ">
     <section class="flex flex-col items-center gap-6">
       <div
         class="flex justify-center border-2 border-black rounded-[8px] bg-[#FFF3CC] py-2 px-3 items-center gap-3"
@@ -94,7 +94,7 @@ const clonedTweetData2 = ref([...tweetData2.value, ...tweetData2.value]);
       </button>
     </section>
 
-    <section class="mt-16 flex flex-col gap-6">
+    <section class="mt-8 sm:mt-16 flex flex-col gap-6">
       <!-- first Section -->
       <div class="scroll-container">
         <section class="scroll-content">
@@ -225,6 +225,22 @@ const clonedTweetData2 = ref([...tweetData2.value, ...tweetData2.value]);
   .tweet-card {
   flex: 0 0 40%;
   white-space: normal; /* Ensure text wraps */
+}
+}
+@media screen and (max-width: 639px ) {
+  .tweet-card {
+  flex: 0 0 70%;
+  white-space: normal; /* Ensure text wraps */
+}
+.scroll-content {
+  display: flex;
+  gap: 1rem;
+  animation: scroll 5s linear infinite;
+}
+.scroll-content2 {
+  display: flex;
+  gap: 1rem;
+  animation: scroll2 5s linear infinite;
 }
 }
 </style>

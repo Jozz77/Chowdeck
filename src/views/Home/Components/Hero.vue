@@ -116,18 +116,18 @@ onBeforeUnmount(() => {
     <!-- Heading to animate -->
     <h1
       ref="headingRef"
-      class="text-[4.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7rem] mt-[-5%] md:mt-[-20%] lg:mt-[-12%] xl:mt-[-5%] xxl:mt-[-10%] overflow-hidden text-center animated-text font-bold"
+      class="text-[2.5rem] lsm:text-[2.7rem] ssm:text-[3.2rem] sm:text-[4.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7rem] mt-[0%] sm:mt-[-5%] md:mt-[-20%] lg:mt-[-12%] xl:mt-[-5%] xxl:mt-[-10%] overflow-hidden text-center animated-text font-bold"
     >
       {{ currentText }}
     </h1>
 
     <!-- Buttons to animate -->
     <section
-      class="flex flex-col md:flex-row items-center justify-center gap-4"
+      class="flex flex-col md:flex-row items-center justify-center gap-2 sm:gap-4"
     >
       <button
         ref="buttonRef1"
-        class="bg-[#0C513F] py-4 px-8 md:px-6 rounded-md flex gap-2 items-center"
+        class="bg-[#0C513F] py-4 px-6 sm:px-8 md:px-6 rounded-md flex gap-2 items-center"
       >
         <div class="w-[10%]">
           <img alt="Playstore logo" class="w-full" src="../Assets/svg.svg" />
@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
 
       <button
         ref="buttonRef2"
-        class="bg-[#0C513F] py-4 px-8 md:px-6 rounded-md flex gap-2 items-center"
+        class="bg-[#0C513F] py-4 px-6 sm:px-8 md:px-6 rounded-md flex gap-2 items-center"
       >
         <div>
           <i class="fa-brands fa-apple text-white text-[1.5rem]"></i>

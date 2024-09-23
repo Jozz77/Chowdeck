@@ -66,7 +66,7 @@ watch(activeTab, (newTab) => {
 </script>
 
 <template>
-  <div class="mt-12 lg:mt-20 tab-section">
+  <div class="mt-10 sm:mt-12 lg:mt-20 tab-section">
     <section class="flex justify-center py-3 tab-buttons">
       <div class="bg-[#FFF3CC] overflow-hidden p-1 text-base font-medium rounded-full">
         <button
@@ -74,7 +74,7 @@ watch(activeTab, (newTab) => {
           :key="tab.name"
           :class="{ 'bg-[#FFC501]': activeTab.name === tab.name }"
           @click="selectTab(tab)"
-          class="rounded-full px-8 py-2"
+          class="rounded-full text-[0.9rem] sm:text-base px-5 sm:px-8 py-2"
         >
           {{ tab.name }}
         </button>
@@ -87,17 +87,17 @@ watch(activeTab, (newTab) => {
         <div key="tab-content">
           <div v-if="activeTab.name === 'Customer'" class="text-center">
             <section class=" flex flex-col gap-4">
-              <h2 class="text-[3.5rem] font-black customer-heading">Try the App</h2>
-              <p class="px-[15%] lg:px-[25%] tracking-wider text-[1.1rem] customer-text">
+              <h2 class="text-[3rem] sm:text-[3.5rem]  font-black customer-heading">Try the App</h2>
+              <p class="px-[5%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1.1rem] customer-text">
                 Have meals delivered to you within minutes from a wide variety of restaurants ranging from African to
                 Continental cuisines to satisfy your cravings.
               </p>
             </section>
 
-            <section class="relative mx-auto w-[30%] mt-12 lg:mt-20 ">
+            <section class="relative mx-auto w-[40%] sm:w-[30%] mt-12 lg:mt-20 ">
               <img :src="Phone" class="w-full phone-img" alt="phone" />
 
-              <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
+              <div class="rotate-animation absolute w-[40%] sm:w-[30%] top-[-8%] sm:top-[-5%] left-[75%]">
                 <img src="../Assets/roll.svg" class="w-full " alt="roll" />
               </div>
             </section>
@@ -105,16 +105,16 @@ watch(activeTab, (newTab) => {
 
           <div v-if="activeTab.name === 'Vendors'" class="text-center">
             <section class=" flex flex-col gap-4">
-              <h2 class="text-[3.5rem] font-black customer-heading">All in One</h2>
-              <p class="px-[25%] tracking-wider text-[1.1rem] customer-text">
+              <h2 class="text-[3rem] sm:text-[3.5rem]  font-black customer-heading">All in One</h2>
+              <p class="px-[5%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1.1rem] customer-text">
                 Unlock new levels of growth with seamless menu and orders management, multiple branches and team, easy payouts withdrawal and a lot more.
               </p>
             </section>
 
-            <section class="relative mx-auto w-[30%] mt-12 lg:mt-20 ">
+            <section class="relative mx-auto w-[40%] sm:w-[30%] mt-12 lg:mt-20 ">
               <img :src="VendorImg" class="w-full phone-img" alt="phone" />
 
-              <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
+              <div class="rotate-animation absolute w-[40%] sm:w-[30%] top-[-8%] sm:top-[-5%] left-[75%]">
                 <img src="../Assets/roll.svg" class="w-full " alt="roll" />
               </div>
             </section>
@@ -122,16 +122,16 @@ watch(activeTab, (newTab) => {
 
           <div v-if="activeTab.name === 'Riders'" class="text-center">
             <section class=" flex flex-col gap-4">
-              <h2 class="text-[3.5rem] font-black customer-heading">Become a Champ</h2>
-              <p class="px-[25%] tracking-wider text-[1.1rem] customer-text">
+              <h2 class="text-[3rem] sm:text-[3.5rem]  font-black customer-heading">Become a Champ</h2>
+              <p class="px-[5%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1.1rem] customer-text">
                 Choose your own working hours, ride your choice of bike, track your metrics, earn bonuses and withdraw easily to your account. Do more with our app.
               </p>
             </section>
 
-            <section class="relative mx-auto w-[30%] mt-12 lg:mt-20 ">
+            <section class="relative mx-auto w-[40%] sm:w-[30%] mt-12 lg:mt-20 ">
               <img :src="CustomerRiderImg" class="w-full phone-img" alt="phone" />
 
-              <div class="rotate-animation absolute w-[30%] top-[-5%] left-[75%]">
+              <div class="rotate-animation absolute w-[40%] sm:w-[30%] top-[-8%] sm:top-[-5%] left-[75%]">
                 <img src="../Assets/roll.svg" class="w-full " alt="roll" />
               </div>
             </section>  

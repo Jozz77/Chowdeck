@@ -46,13 +46,13 @@ onMounted(() => {
 <template>
   <div
     ref="placeRef"
-    class="px-[5%] place-container flex flex-col gap-12 lg:gap-0 lg:flex-row justify-between mt-10"
+    class="px-[5%] place-container flex flex-col gap-6 ssm:gap-12 lg:gap-0 lg:flex-row justify-between mt-10"
   >
     <section
       ref="textRef"
       class=" w-full lg:w-[48%]  bg-Primary rounded-[12px] py-8 px-[3%]"
     >
-      <h2 class="text-[2.5rem] lg:text-[2.3rem] xl:text-[2.5rem] leading-[130%] text-white font-black">
+      <h2 class="text-[2rem] ssm:text-[2.5rem] lg:text-[2.3rem] xl:text-[2.5rem] leading-[130%] text-white font-black">
         Place your <br />
         order in seconds
       </h2>
