@@ -77,7 +77,7 @@ const clonedTweetData2 = ref([...tweetData2.value, ...tweetData2.value]);
 </script>
 
 <template>
-  <div class="pt-16 sm:pt-24 lg:pt-32 pb-8 whiteBg relative mt-[-5%] ">
+  <div class="pt-24 lg:pt-32 pb-8 whiteBg relative mt-[-10%] sm:mt-[-5%] ">
     <section class="flex flex-col items-center gap-6">
       <div
         class="flex justify-center border-2 border-black rounded-[8px] bg-[#FFF3CC] py-2 px-3 items-center gap-3"

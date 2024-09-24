@@ -1,10 +1,6 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import { gsap } from "gsap";
-import Phone from "../Assets/phone.png";
-import CustomerImg from "../Assets/roll.svg";
-import VendorImg from "../Assets/vendor.png";
-import CustomerRiderImg from "../Assets/rider.png";
 
 // Define tab content components
 const tabs = ref([
@@ -95,7 +91,7 @@ watch(activeTab, (newTab) => {
             </section>
 
             <section class="relative mx-auto w-[40%] sm:w-[30%] mt-12 lg:mt-20 ">
-              <img :src="Phone" class="w-full phone-img" alt="phone" />
+              <img src="https://res.cloudinary.com/duzj8zjj5/image/upload/v1727205119/phone_swwawf.png" class="w-full phone-img" alt="phone" />
 
               <div class="rotate-animation absolute w-[40%] sm:w-[30%] top-[-8%] sm:top-[-5%] left-[75%]">
                 <img src="../Assets/roll.svg" class="w-full " alt="roll" />
@@ -112,7 +108,7 @@ watch(activeTab, (newTab) => {
             </section>
 
             <section class="relative mx-auto w-[40%] sm:w-[30%] mt-12 lg:mt-20 ">
-              <img :src="VendorImg" class="w-full phone-img" alt="phone" />
+              <img src="https://res.cloudinary.com/duzj8zjj5/image/upload/v1727205148/vendor_silk88.png" class="w-full phone-img" alt="phone" />
 
               <div class="rotate-animation absolute w-[40%] sm:w-[30%] top-[-8%] sm:top-[-5%] left-[75%]">
                 <img src="../Assets/roll.svg" class="w-full " alt="roll" />
@@ -129,7 +125,7 @@ watch(activeTab, (newTab) => {
             </section>
 
             <section class="relative mx-auto w-[40%] sm:w-[30%] mt-12 lg:mt-20 ">
-              <img :src="CustomerRiderImg" class="w-full phone-img" alt="phone" />
+              <img src="https://res.cloudinary.com/duzj8zjj5/image/upload/v1727205121/rider_nygo2a.png" class="w-full phone-img" alt="phone" />
 
               <div class="rotate-animation absolute w-[40%] sm:w-[30%] top-[-8%] sm:top-[-5%] left-[75%]">
                 <img src="../Assets/roll.svg" class="w-full " alt="roll" />

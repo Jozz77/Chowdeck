@@ -100,7 +100,7 @@ onMounted(() => {
     </section>
 
     <div ref="imageRef" class="w-full lg:w-[50%] xl:w-[48%]">
-      <img src="../Assets/place.png" class="w-full" alt="Can" />
+      <img src="https://res.cloudinary.com/duzj8zjj5/image/upload/v1727205119/place_dineti.png" class="w-full" alt="Can" />
     </div>
   </div>
 </template>

@@ -84,13 +84,13 @@ onMounted(() => {
 <template>
   <div class="px-[5%] py-8 overflow-hidden">
     <section
-      class="join-section text-[#D1D5DB] mt-12 lg:mt-16 flex gap-3 items-center justify-center"
+      class="join-section text-[#D1D5DB] mt-8 sm:mt-12 lg:mt-16 flex gap-3 items-center justify-center"
     >
-      <h2 class="text-[#D1D5DB] text-[1.8rem] ssm:text-[2.2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem]">Join our growing network</h2>
-        <i class="fa-solid fa-arrow-down text-[#D1D5DB] leading-none text-[2rem] md:text-[2.5rem]"></i>
+      <h2 class="text-[#D1D5DB] text-[1.5rem] ssm:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem]">Join our growing network</h2>
+        <i class="fa-solid fa-arrow-down text-[#D1D5DB] leading-none text-[1.3rem] ssm:text-[2rem] md:text-[2.5rem]"></i>
     </section>
 
-    <section class="join-section flex flex-col gap-6 md:gap-0 md:flex-row justify-between mt-12">
+    <section class="join-section flex flex-col gap-6 md:gap-0 md:flex-row justify-between mt-8 sm:mt-12">
       <div
         v-for="join in joinData"
         :key="join.id"
@@ -100,7 +100,7 @@ onMounted(() => {
           <div class="w-[8%] h-5 mb-3 sm:mb-5 md:mb-0 ">
             <img :src="join.icon" class=" w-full" alt="" />
           </div>
-          <h3 class="font-black  md:text-[1.2rem]text-[1.1rem] lg:text-[1.3rem]">{{join.title}}</h3>
+          <h3 class="font-black  md:text-[1.2rem] text-[1.1rem] lg:text-[1.3rem]">{{join.title}}</h3>
           <p class="text-[0.95rem] md:text-[0.85rem] lg:text-[0.95rem]">
             {{join.text}}
           </p>

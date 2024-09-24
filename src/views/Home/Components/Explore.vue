@@ -1,9 +1,5 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import explore1 from "../Assets/explore1.png";
-import explore2 from "../Assets/explore2.png";
-import explore3 from "../Assets/explore3.png";
-import explore4 from "../Assets/explore4.png";
 import quick1 from "../Assets/quick1.svg";
 import quick2 from "../Assets/quick2.svg";
 import quick3 from "../Assets/quick3.svg";
@@ -70,22 +66,22 @@ const quickData = ref([
 const exploreImages = ref([
   {
     id: 1,
-    img: explore1,
+    img: "https://res.cloudinary.com/duzj8zjj5/image/upload/v1727204746/explore1_xyyn6t.png",
     style: "mt-0",
   },
   {
     id: 2,
-    img: explore2,
+    img: "https://res.cloudinary.com/duzj8zjj5/image/upload/v1727204746/explore2_tk5ulg.png",
     style: "mt-8",
   },
   {
     id: 3,
-    img: explore3,
+    img: "https://res.cloudinary.com/duzj8zjj5/image/upload/v1727204744/explore3_tymtjl.png",
     style: "mt-0",
   },
   {
     id: 4,
-    img: explore4,
+    img: "https://res.cloudinary.com/duzj8zjj5/image/upload/v1727204746/explore4_dl7ryd.png",
     style: "mt-8",
   },
 ]);

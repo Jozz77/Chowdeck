@@ -4,9 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { PrArrowDown } from "oh-vue-icons/icons";
-import story1 from '../Assets/story1.png'
-import story2 from '../Assets/story2.png'
-import story3 from '../Assets/story3.png'
+
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -17,21 +15,21 @@ const joinData = ref([
     icon: "",
     title: `Start selling`,
     text: `Are you a restaurant owner looking to grow your business? Reach new customers when you join our network.`,
-    image: story1,
+    image: "https://res.cloudinary.com/duzj8zjj5/image/upload/v1727204967/story1_cy3eqc.png",
   },
   {
     id: 2,
     icon: "",
     title: `Champions : Kingsley Agbinya`,
     text: `Kingsley, a rider who got promoted to an associate talks about his journey and the biggest change in his life since he j...`,
-    image: story2,
+    image: "https://res.cloudinary.com/duzj8zjj5/image/upload/v1727204968/story2_m3did6.png",
   },
   {
     id: 3,
     icon: "",
     title: `Champions : Anthony Agam`,
     text: `Anthony a.k.a Spider, a Senior Man, shares his life-changing experience and most memorable delivery with Chowdeck.`,
-    image: story3,
+    image: "https://res.cloudinary.com/duzj8zjj5/image/upload/v1727204968/story3_d3wnoa.png",
   },
 ]);
 
