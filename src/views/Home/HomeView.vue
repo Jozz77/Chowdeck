@@ -7,6 +7,7 @@ import Explore from './Components/Explore.vue'
 import StreetCred from './Components/StreetCred.vue'
 import Stories from './Components/Stories.vue'
 import FAQs from './Components/FAQs.vue'
+import FaqMobile from './Components/FaqMobile.vue'
 import PlaceOrder from './Components/PlaceOrder.vue'
 import Footer from '../../components/Footer/Footer.vue'
 import FooterMobile from '../../components/Footer/FooterMobile.vue'
@@ -23,8 +24,13 @@ import FooterMobile from '../../components/Footer/FooterMobile.vue'
     <StreetCred />
     <Stories />
 
-    <div class=" bg-black mt-24 lg:mt-40 pt-[5%] " >
-      <FAQs />
+    <div class=" bg-black mt-16 md:mt-24 lg:mt-40 pt-[5%] " >
+      <div class="hidden md:block">
+        <FAQs />
+      </div>
+      <div class="block md:hidden">
+        <FaqMobile />
+      </div>
       <PlaceOrder />
       <div class="hidden md:block">
         <Footer />

@@ -116,7 +116,7 @@ onBeforeUnmount(() => {
     <!-- Heading to animate -->
     <h1
       ref="headingRef"
-      class="text-[2.5rem] lsm:text-[2.7rem] ssm:text-[3.2rem] sm:text-[4.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7rem] mt-[0%] sm:mt-[-5%] md:mt-[-20%] lg:mt-[-12%] xl:mt-[-5%] xxl:mt-[-10%] overflow-hidden text-center animated-text font-bold"
+      class="text-[2.5rem] lsm:text-[2.7rem] leading-[120%] sm:leading-normal ssm:h-auto ssm:text-[3.2rem] sm:text-[4.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7rem] mt-[0%] sm:mt-[-5%] md:mt-[-20%] lg:mt-[-12%] xl:mt-[-5%] xxl:mt-[-10%] overflow-hidden text-center animated-text font-black sm:font-bold"
     >
       {{ currentText }}
     </h1>
@@ -132,7 +132,7 @@ onBeforeUnmount(() => {
         <div class="w-[10%]">
           <img alt="Playstore logo" class="w-full" src="../Assets/svg.svg" />
         </div>
-        <p class="text-white text-[1rem]">Download on Google Play</p>
+        <p class="text-white text-[0.9rem] ssm:text-[1rem]">Download on Google Play</p>
       </button>
 
       <button
@@ -142,7 +142,7 @@ onBeforeUnmount(() => {
         <div>
           <i class="fa-brands fa-apple text-white text-[1.5rem]"></i>
         </div>
-        <p class="text-white text-[1rem]">Download on the App Store</p>
+        <p class="text-white text-[0.9rem] ssm:text-[1rem]">Download on the App Store</p>
       </button>
     </section>
 

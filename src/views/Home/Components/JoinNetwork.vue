@@ -86,8 +86,8 @@ onMounted(() => {
     <section
       class="join-section text-[#D1D5DB] mt-12 lg:mt-16 flex gap-3 items-center justify-center"
     >
-      <h2 class="text-[#D1D5DB] text-[2.2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem]">Join our growing network</h2>
-        <i class="fa-solid fa-arrow-down text-[#D1D5DB] leading-none text-[2.5rem]"></i>
+      <h2 class="text-[#D1D5DB] text-[1.8rem] ssm:text-[2.2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem]">Join our growing network</h2>
+        <i class="fa-solid fa-arrow-down text-[#D1D5DB] leading-none text-[2rem] md:text-[2.5rem]"></i>
     </section>
 
     <section class="join-section flex flex-col gap-6 md:gap-0 md:flex-row justify-between mt-12">

@@ -197,7 +197,7 @@ const goToSlide = (index) => {
 
     <section class="flex flex-col md:flex-row gap-10 md:gap-0 items-start mt-10 justify-between px-[5%] md:items-center">
       <div class="w-[80%] md:w-[40%] relative">
-        <h3 class="text-[2rem] sm:text-[2.7rem] md:text-[2.3rem] lg:text-[2.7rem] leading-[130%] text-white font-black">
+        <h3 class="text-[1.8rem] sm:text-[2.7rem] md:text-[2.3rem] lg:text-[2.7rem] leading-[130%] text-white font-black">
           Chowdeck has <br />
           you covered
         </h3>

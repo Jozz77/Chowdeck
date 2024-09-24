@@ -56,37 +56,37 @@ const faqs = ref([
     id: 2,
     question: "What locations do we currently deliver to?",
     answer:
-      "Chowdeck currently delivers to major cities across the country. Our delivery network is rapidly expanding to reach more areas, and we strive to offer timely delivery services to all our customers within these locations.",
+      "We currently pick up and also deliver food to places in Lagos, Abuja, Ibadan, Port-Harcourt, Ilorin, Benin City, Abeokuta and Asaba. This means you can find your favourite restaurants and food vendors who are in these locations and order your meals from them. There are ongoing plans to expand to other areas of Nigeria soon.",
   },
   {
     id: 3,
     question: "What is Chowdeck wallet?",
     answer:
-      "Chowdeck Wallet is a digital wallet that allows users to store funds for easier transactions. With the Chowdeck Wallet, users can top up their balance and use it to make faster and more convenient payments when ordering meals through the platform.",
+      "Chowdeck wallet is a safe feature on the app where you can put in money for later use. The money in the Chowdeck wallet can be used to make payments for orders placed on the app. When an order gets rejected due to various reasons, the payment made initially when the order was placed automatically goes into your Chowdeck wallet which is accessible to make payments for future orders.",
   },
   {
     id: 4,
     question: "What is Chowscore?",
     answer:
-      "Chowscore is a rating system that allows customers to review their experience with restaurants and delivery services on the Chowdeck platform. It helps to ensure that vendors maintain high standards, and allows customers to make informed decisions when choosing where to order from.",
+      "Chowscore indicates how active you are on Chowdeck as a customer. This works by combining all your overall activities on the app from the day you signed up till date and rewarding you points for it. You get points for ordering meals, rating and reviewing restaurants, rating riders and referring the app to friends. Rack up more points to move tiers and enjoy exclusive discounts and free delivery on orders.",
   },
   {
     id: 5,
     question: "What is Service fee?",
     answer:
-      "The service fee is a small charge applied to each order to cover operational costs like payment processing, customer support, and platform maintenance. It ensures that Chowdeck can continue to provide a seamless ordering and delivery experience.",
+      "The service fee is a consumer fee that appears on the price breakdown at checkout on the Chowdeck app. Unlike other consumer fees, the service fee depends on your order’s subtotal, that is, a percentage of your bill excluding the delivery fee. We understand the service fee increases as the order amount increases, so we’ve capped it to prevent it from getting too excessive. It also does not apply to all restaurants on our platform.",
   },
   {
     id: 6,
     question: "Why do we charge Service fee?",
     answer:
-      "The service fee is necessary to maintain the quality of our services. It helps cover the costs of running the platform, including technology infrastructure, customer service, and ensuring the smooth operation of logistics for both vendors and customers.",
+      "Having food delivered to you anytime, anywhere is so convenient, but it can be extremely costly to operate a delivery service. We need to cover technology costs, transaction processing fees and support to do this effectively. The various fees on our checkout ensure we stay ahead of these costs and continue serving you, our deserving customer. We sincerely appreciate your patronage and look forward to surpassing delivery standards as we establish ourselves as a household name for meal delivery across Africa.",
   },
   {
     id: 7,
     question: "What is Surge fee?",
     answer:
-      "The surge fee is an additional charge applied during times of high demand. It helps ensure that there are enough delivery drivers available to meet the increased demand, ensuring quicker deliveries even during peak times.",
+      "A surge fee is a dynamic flat fee applicable when order demand exceeds available driver supply and is added to your subtotal during checkout on the Chowdeck app. The surge fee is calculated by considering how many people want to order on Chowdeck and how many delivery drivers are on the road in a particular area to fulfil orders.",
   },
 ]);
 

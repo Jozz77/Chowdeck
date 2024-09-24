@@ -87,8 +87,8 @@ watch(activeTab, (newTab) => {
         <div key="tab-content">
           <div v-if="activeTab.name === 'Customer'" class="text-center">
             <section class=" flex flex-col gap-4">
-              <h2 class="text-[3rem] sm:text-[3.5rem]  font-black customer-heading">Try the App</h2>
-              <p class="px-[5%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1.1rem] customer-text">
+              <h2 class="text-[2.5rem] ssm:text-[3rem] sm:text-[3.5rem]  font-black customer-heading">Try the App</h2>
+              <p class="px-[0%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1rem] sm:text-[1.1rem] customer-text">
                 Have meals delivered to you within minutes from a wide variety of restaurants ranging from African to
                 Continental cuisines to satisfy your cravings.
               </p>
@@ -105,8 +105,8 @@ watch(activeTab, (newTab) => {
 
           <div v-if="activeTab.name === 'Vendors'" class="text-center">
             <section class=" flex flex-col gap-4">
-              <h2 class="text-[3rem] sm:text-[3.5rem]  font-black customer-heading">All in One</h2>
-              <p class="px-[5%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1.1rem] customer-text">
+              <h2 class="text-[2.5rem] ssm:text-[3rem] sm:text-[3.5rem]  font-black customer-heading">All in One</h2>
+              <p class="px-[0%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1rem] sm:text-[1.1rem] customer-text">
                 Unlock new levels of growth with seamless menu and orders management, multiple branches and team, easy payouts withdrawal and a lot more.
               </p>
             </section>
@@ -122,8 +122,8 @@ watch(activeTab, (newTab) => {
 
           <div v-if="activeTab.name === 'Riders'" class="text-center">
             <section class=" flex flex-col gap-4">
-              <h2 class="text-[3rem] sm:text-[3.5rem]  font-black customer-heading">Become a Champ</h2>
-              <p class="px-[5%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1.1rem] customer-text">
+              <h2 class="text-[2.5rem] ssm:text-[3rem] sm:text-[3.5rem]  font-black customer-heading">Become a Champ</h2>
+              <p class="px-[0%] sm:px-[15%] lg:px-[25%] tracking-wider text-[1rem] sm:text-[1.1rem] customer-text">
                 Choose your own working hours, ride your choice of bike, track your metrics, earn bonuses and withdraw easily to your account. Do more with our app.
               </p>
             </section>
