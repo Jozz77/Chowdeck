@@ -1,16 +1,30 @@
-# First-Vue 
+# Chowdeck Replica Landing Page
 
-This template should help get you started developing with Vue 3 in Vite.
+A Landing page replica of the ChowDeck site.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- List of key features
+- Mobile responsive
+- Interactive UI
+- Fast and easy-to-use
+- Additional features
 
-## Customize configuration
+## Tech Stack
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **Frontend**: [Vue.js](https://vuejs.org/) (JavaScript Framework)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Animations**: [GSAP](https://greensock.com/gsap/)
 
-## Project Setup
+## Installation
+
+To set up the project locally, follow these steps:
+
+### 1. Clone the Repository
+
+```sh
+git clone https://github.com/Jozz77/Chowdeck.git
+
 
 ```sh
 npm install
@@ -27,3 +41,11 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Prerequisites
+
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/en/)
+- npm (comes with Node.js) or yarn
+
+
